@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="���ڿؼ� datepicker calendar �����ؼ� javascript js�����ؼ� ��ʱ�� �Զ����ʽ �����ؼ� ����ʱ�� ����ѡ��" />
+<title>My97���ڿؼ� ������ʾ ���湦�� My97 Datepicker Demo</title>
+<link href="../../css/base.css" tppabs="http://www.my97.net/dp/css/base.css" rel="stylesheet" type="text/css" />
+<link href="demo.css" tppabs="http://www.my97.net/dp/demo/resource/demo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<iframe src="../../head.asp" tppabs="http://www.my97.net/dp/head.asp" scrolling="no" frameborder="0" height="100px" width="100%"></iframe>
+<script language="JavaScript" type="text/javascript" src="../../../WdatePicker.js" tppabs="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+<div class="dCenter dBody">
+  <div id="content">
+
+
+    <h2>��. ���ܼ�ʾ��<a name="m2" id="m2"></a></h2>
+    <h3>1. ���湦��<a name="m21" id="m21"></a></h3>
+    <ol>
+      <li>֧�ֶ��ֵ���ģʽ <a name="m211" id="m211"></a>
+        <p>����֧�ֳ�����input�������ý��������,��֧��ʹ��������Ԫ����:&lt;img&gt;&lt;div&gt;�ȴ���WdatePicker���������õ������ڿ�</p>
+        <div>
+          <h4>ʾ��1-1-1 �������</h4>
+          <p>
+            <input type="text" id="d11" onClick="WdatePicker()"/>
+            <br />
+            &lt;input id=&quot;d11&quot; type=&quot;text&quot; <span class="STYLE1">onClick=&quot;WdatePicker()&quot;</span>/&gt;</p>
+        </div>
+        <div>
+          <h4>ʾ��1-1-2 ͼ�괥��</h4>
+          <p>
+            <input id="d12" type="text"/>
+            <img src="../../../skin/datePicker.gif" tppabs="http://www.my97.net/dp/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle" style="cursor:pointer" onClick="WdatePicker({el:'d12'})" /> <br />
+            &lt;input id=&quot;<span class="STYLE1">d12</span>&quot; type=&quot;text&quot;/&gt;<br />
+            &lt;img onclick=&quot;WdatePicker({<span class="STYLE2">el:</span><span class="STYLE1">'d12'</span>})&quot;  src=&quot;../skin/datePicker.gif&quot; width=&quot;16&quot; height=&quot;22&quot; align=&quot;absmiddle&quot;&gt;<br />
+          <span class="STYLE1">ע��:</span>ֻ��Ҫ����ؼ���id����</p>
+        </div>
+      </li>
+      <li>����,����,����ѡ������<a name="m212" id="m212"></a>
+        <p>����ʱ��������򶼾߱������������� <br />
+          1.
+          ͨ������ͼ��ѡ��<br />
+          <img src="pic1.jpg" tppabs="http://www.my97.net/dp/demo/resource/pic1.jpg" width="180" height="197" /><br />
+          <br />
+          2. ֱ��ʹ�ü�����������<br />
+          <img src="pic2.jpg" tppabs="http://www.my97.net/dp/demo/resource/pic2.jpg" width="180" height="197" /><br />
+          <br />
+          3. ֱ�Ӵӵ�������������ѡ��<br />
+          <img src="pic3.jpg" tppabs="http://www.my97.net/dp/demo/resource/pic3.jpg" width="180" height="197" /><br />
+          <br />
+          <span class="STYLE2">��:����������������ʾ����,���û��������ͬһ��������ť5��ʱ,���Զ��������������</span></p>
+      </li>
+      <li>֧������ʾ <a name="m213" id="m213"></a>
+        <p>����ͨ������isShowWeek���Ծ����Ƿ�������,�����ڷ������ڵ�ʱ�򻹿���ͨ���Դ����Զ����¼���API��������ѡ�����</p>
+        <br />
+        <div>
+          <h4>ʾ��1-2-1 ����ʾ��Ӧ�� </h4>
+          <p>
+            <input id="d121" type="text" onfocus="WdatePicker({isShowWeek:true})"/>
+            <br />
+            &lt;input id=&quot;d121&quot; type=&quot;text&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">isShowWeek:</span><span class="STYLE1">true</span>})&quot;/&gt;<br />
+            <br />
+          <span class="STYLE1">ע��:���㷨�ο�����ISO8601����ķ���,������Դ�������,�����:</span><a href="javascript:if(confirm('http://en.wikipedia.org/wiki/ISO_week_date  \n\n���ļ�δ�� Teleport Pro ���أ���Ϊ ��λ����ʼ��ַ�����õı߽���������·���С�  \n\n����Ҫ�ӷ�����������?'))window.location='http://en.wikipedia.org/wiki/ISO_week_date'" tppabs="http://en.wikipedia.org/wiki/ISO_week_date" target="_blank">http://en.wikipedia.org/wiki/ISO_week_date</a><br />
+          <br />
+          ���㷨ѡ��<span class="STYLE1">(4.8����)</span><br />
+          �������:<span class="STYLE2">weekMethod</span><br />
+���㷨��ͬ�ĵط���һЩ����<br />
+�����㷨������<br />
+1. ISO8601:�涨��һ��������Ϊ��һ��,Ĭ��ֵ<br />
+2. MSExcel:1��1�����ڵ���</p>
+        </div>
+        <div>
+          <h4>ʾ��1-2-2 ����onpicked�¼����ܸ�ֵ��������ı���</h4>
+          <p>
+            <input type="text" class="Wdate" id="d122" onFocus="WdatePicker({isShowWeek:true,onpicked:function(){$dp.$('d122_1').value=$dp.cal.getP('W','W');$dp.$('d122_2').value=$dp.cal.getP('W','WW');}})"/>
+            &nbsp;&nbsp;
+            ��ѡ���˵�
+            <input type="text" id="d122_1" size="3"/>
+            (W��ʽ)��, ����������ʹ��WW��ʽ:
+            <input  type="text" id="d122_2" size="3"/>
+            �� <br />
+            &lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d122&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">isShowWeek:</span><span class="STYLE1">true</span>,<span class="STYLE2">onpicked:</span><span class="STYLE1">function() {$dp.$('d122_1').value=$dp.cal.getP('W','W');$dp.$('d122_2').value=$dp.cal.getP('W','WW');}</span>})&quot;/&gt;<br />
+            <br />
+            onpicked �÷����<a href="2.5.asp.htm#m251" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp#m251">�Զ����¼�</a><br />
+            $dp.cal.getP �÷����<a href="999.asp.htm#m5" tppabs="http://www.my97.net/dp/demo/resource/999.asp#m5">���ú���������</a><br />
+          </p>
+        </div>
+      </li>
+      <li>ֻ������,������ĩ���� <a name="m214" id="m214"></a>
+        <p>����readOnly���� true �� false ��ָ�����ڿ��Ƿ�ֻ�� <br />
+          ����highLineWeekDay���� ture �� false ��ָ���Ƿ������ĩ </p>
+      </li>
+      <li>������ť�Զ��� <a name="m215" id="m215"></a>
+        <p>��հ�ť�ͽ��찴ť,���Ը�����Ҫ�����Զ���,���Ƿֱ��Ӧ isShowClear �� isShowToday Ĭ��ֵ����true</p>
+        <div>
+          <h4>ʾ��1-5 ������չ���</h4>
+          <p> ��ð�readOnly��Ϊtrue,����ʹ��������հ�ť,�û���Ȼ��������������ֵdelete��<br />
+            <input class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})"/>
+            <br />
+            &lt;input class=&quot;Wdate&quot; type=&quot;text&quot; id=&quot;d15&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">isShowClear:</span><span class="STYLE1">false</span>,<span class="STYLE2">readOnly:</span><span class="STYLE1">true</span>})&quot;/&gt;</p>
+        </div>
+      </li>
+      <li>�Զ�ѡ����ʾλ��<a name="m216" id="m216"></a>
+        <p>���ؼ�����ҳ��߽�ʱ,�����Զ�ѡ����ʾ��λ��,����û�б�Ҫ���ĵ�����ᱻҳ��߽���ס��������.</p>
+      </li>
+      <li>�Զ��嵯��λ�� <a name="m217" id="m217"></a>
+        <p>���ؼ�����ҳ��߽�ʱ,�����Զ�ѡ����ʾ��λ��.�����㻹����ʹ��position�����Ե���λ��������.</p>
+        <br />
+        <div>
+          <h4>ʾ��1-6 ͨ��position����,�Զ��嵯��λ��</h4>
+          <p>ʹ��positon����ָ��,�������ڵ�����Ϊ{left:100,top:50}<br />
+            <input class="Wdate" type="text" id="d16" onfocus="WdatePicker({position:{left:100,top:50}})"/>
+            <br />
+            &lt;input class=&quot;Wdate&quot; type=&quot;text&quot; id=&quot;d16&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">position:</span><span class="STYLE1">{left:100,top:50}</span>})&quot;/&gt;<br />
+            <br />
+            position���Ե���ϸ�÷����<a href="3.asp.htm#m31" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m31">���Ա�</a></p>
+        </div>
+      </li>
+      <li>�Զ������ڵĵ�һ��<span class="STYLE1">(4.6����)</span><a name="m218" id="m218"></a>
+        <p>�������ҵ�ϰ�߲�ͬ,��Щϲ������������Ϊ��һ��,��Щ������һ��Ϊ��һ��.<br />
+�������:<span class="STYLE2">firstDayOfWeek</span>: ������ 0 - 6 ������һ������,0:������ 1:����һ �Դ�����</p>
+      <div>
+          <h4>ʾ��1-7 ������һ��Ϊ��һ��</h4>
+          <p>
+            <input class="Wdate" type="text" id="d17" onfocus="WdatePicker({firstDayOfWeek:1})"/>
+            <br />
+            &lt;input class=&quot;Wdate&quot; type=&quot;text&quot; id=&quot;d17&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">firstDayOfWeek:</span><span class="STYLE1">1</span>})&quot;/&gt;<br />
+          </p>
+        </div>
+      </li>
+    </ol>
+    <h3><a href="2.2.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp">2. ��ɫ����</a> <a name="m22" id="m22"></a></h3>
+    <h3><a href="2.3.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.3.asp">3. �����Ժ��Զ���Ƥ��</a><a name="m23" id="m23"></a></h3>
+    <h3><a href="2.4.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp">4. ���ڷ�Χ����</a><a name="m24" id="m24"></a></h3>
+    <h3><a href="2.5.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp">5. �Զ����¼�</a><a name="m25" id="m25"></a></h3>
+    <h3><a href="2.6.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.6.asp">6. ����ѡ����</a> <a name="m26" id="m26"></a></h3>
+    <h2><a href="3.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/3.asp">��. ����˵��</a><a name="m3" id="m3"></a></h2>
+    <h2><a href="999.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/999.asp">��. ���ʹ��</a><a name="m4" id="m4"></a></h2>
+    <br />
+    <br />
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="dCenter dBody" style="padding-left:72px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6343250634002651";
+/* �ײ� */
+google_ad_slot = "0599809152";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript">
+</script>
+</div>
+<div id="footer" class="dCenter">&copy; 2010 <a href="mailto:smallcarrot@163.com">My97</a> All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F489957c212e14340592fb2e4921b2f1d' type='text/javascript'%3E%3C/script%3E"));
+</script>&nbsp;&nbsp;&nbsp;&nbsp;��ICP��11060275��
+</div>
+</body>
+</html>

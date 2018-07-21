@@ -1,0 +1,335 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="���ڿؼ� datepicker calendar �����ؼ� javascript js�����ؼ� ��ʱ�� �Զ����ʽ �����ؼ� ����ʱ�� ����ѡ��" />
+<title>My97���ڿؼ� ������ʾ ���ڷ�Χ���� My97 Datepicker Demo</title>
+<link href="../../css/base.css" tppabs="http://www.my97.net/dp/css/base.css" rel="stylesheet" type="text/css" />
+<link href="demo.css" tppabs="http://www.my97.net/dp/demo/resource/demo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<iframe src="../../head.asp" tppabs="http://www.my97.net/dp/head.asp" scrolling="no" frameborder="0" height="100px" width="100%"></iframe>
+<script language="JavaScript" type="text/javascript" src="../../../WdatePicker.js" tppabs="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+<div class="dCenter dBody">
+  <div id="content">
+
+    <h2>��. ���ܼ�ʾ��<a name="m2" id="m2"></a></h2>
+<h3>4. ���ڷ�Χ����<a name="m24" id="m24"></a></h3>
+	<oL>
+              <LI>��̬����<a name="m241" id="m241"></a><br />
+                <span class="STYLE1">ע��:���ڸ�ʽ������ realDateFmt �� realTimeFmt һ�¶������� dateFmt һ��</span>
+                <p>����Ը�ͨ������minDate(��С����),maxDate(�������)Ϊ��̬����ֵ,���޶����ڵķ�Χ</p><div>
+          <h4>ʾ��4-1-1 �������ڵķ�Χ�� 2006-09-10��2008-12-20</h4>
+          <p><input id="d411" class="Wdate" type="text" onfocus="WdatePicker({skin:'whyGreen',minDate:'2006-09-10',maxDate:'2008-12-20'})"/><br />
+&lt;input id=&quot;d411&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onfocus=&quot;WdatePicker({skin:'whyGreen',<span class="STYLE2">minDate:</span><span class="STYLE1">'2006-09-10',</span><span class="STYLE2">maxDate:</span><span class="STYLE1">'2008-12-20'</span>})&quot;/&gt;</p>
+        </div><div>
+          <h4>ʾ��4-1-2 �������ڵķ�Χ�� 2008-3-8 11:30:00 �� 2008-3-10 20:59:30</h4>
+          <p><input type="text" class="Wdate" id="d412" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'2008-03-08 11:30:00',maxDate:'2008-03-10 20:59:30'})" value="2008-03-09 11:00:00"/><br />
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d412&quot; onfocus=&quot;WdatePicker({skin:'whyGreen',<span class="STYLE2">dateFmt:</span><span class="STYLE1">'yyyy-MM-dd HH:mm:ss',</span><span class="STYLE2">minDate:</span><span class="STYLE1">'2008-03-08 11:30:00',</span><span class="STYLE2">maxDate:</span><span class="STYLE1">'2008-03-10 20:59:30'</span>})&quot; value=&quot;2008-03-09 11:00:00&quot;/&gt;</p>
+        </div><div>
+          <h4>ʾ��4-1-3 �������ڵķ�Χ�� 2008��2�� �� 2008��10��</h4>
+          <p><input type="text" class="Wdate" id="d413" onfocus="WdatePicker({dateFmt:'yyyy��M��',minDate:'2008-2',maxDate:'2008-10'})"/><br />
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d413&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">dateFmt:</span><span class="STYLE1">'yyyy��M��',</span><span class="STYLE2">minDate:</span><span class="STYLE1">'2008-2',</span><span class="STYLE2">maxDate:</span><span class="STYLE1">'2008-10'</span>})&quot;/&gt;</p>
+        </div><div>
+          <h4>ʾ��4-1-4 �������ڵķ�Χ�� 8:00:00 �� 11:30:00</h4>
+          <p><input type="text" class="Wdate" id="d414" onfocus="WdatePicker({dateFmt:'H:mm:ss',minDate:'8:00:00',maxDate:'11:30:00'})"/><br />
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d414&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">dateFmt:</span><span class="STYLE1">'H:mm:ss',</span><span class="STYLE2">minDate:</span><span class="STYLE1">'8:00:00',</span><span class="STYLE2">maxDate:</span><span class="STYLE1">'11:30:00'</span>})&quot;/&gt;</p>
+        </div></LI>
+              <LI>��̬����<a name="m242" id="m242"></a><br />
+                <span class="STYLE1">ע��:���ڸ�ʽ������ realDateFmt �� realTimeFmt һ�¶������� dateFmt һ��</span>
+                <p>�����ͨ��ϵͳ�����Ķ�̬����,��%y(��ǰ��),%M(��ǰ��)�����޶����ڷ�Χ,�㻹����ͨ��{}���б��ʽ����,��:{%d+1}:��ʾ����<br />
+                <br />
+              ��̬������</p>
+                <table width="335" border="0" cellpadding="3" cellspacing="1" bgcolor="#000000">
+                  <tr>
+                    <th width="62">��ʽ</th>
+                    <th width="258">˵��</th>
+                  </tr>
+                  <tr>
+                    <td align="center">%y </td>
+                    <td>��ǰ��</td>
+                  </tr>
+                  <tr>
+                    <td align="center">%M </td>
+                    <td>��ǰ��</td>
+                  </tr>
+                  <tr>
+                    <td align="center">%d </td>
+                    <td>��ǰ��</td>
+                  </tr>
+                  <tr>
+                    <td align="center">%ld</td>
+                    <td>�������һ��</td>
+                  </tr>
+                  <tr>
+                    <td align="center">%H </td>
+                    <td>��ǰʱ</td>
+                  </tr>
+                  <tr>
+                    <td align="center">%m </td>
+                    <td>��ǰ��</td>
+                  </tr>
+                  <tr>
+                    <td align="center">%s </td>
+                    <td>��ǰ��</td>
+                  </tr>
+                  <tr>
+                    <td align="center">{}</td>
+                    <td>������ʽ,��:{%d+1}:��ʾ����</td>
+                  </tr>
+                  <tr>
+                    <td align="center">#F{}</td>
+                    <td>{}֮���Ǻ�����д�Զ���JS����</td>
+                  </tr>
+                </table>
+				<div>
+          <h4>ʾ��4-2-1 ֻ��ѡ�������ǰ������(��������)</h4>
+          <p><input id="d421" class="Wdate" type="text" onfocus="WdatePicker({skin:'whyGreen',maxDate:'%y-%M-%d'})"/><br />
+&lt;input id=&quot;d421&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onfocus=&quot;WdatePicker({skin:'whyGreen',<span class="STYLE2">maxDate:</span><span class="STYLE1">'%y-%M-%d'</span>})&quot;/&gt;</p>
+        </div>
+		<div>
+          <h4>ʾ��4-2-2 <span class="STYLE2">ʹ����������ʽ</span> ֻ��ѡ������Ժ������(����������)</h4>
+          <p><input id="d422" class="Wdate" type="text" onfocus="WdatePicker({minDate:'%y-%M-{%d+1}'})"/><br />
+&lt;input id=&quot;d422&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">minDate:</span><span class="STYLE1">'%y-%M-{%d+1}'</span>})&quot;/&gt;</p>
+        </div>
+		<div>
+          <h4>ʾ��4-2-3 ֻ��ѡ���µ�����1�����������һ��</h4>
+          <p><input id="d423" class="Wdate" type="text" onfocus="WdatePicker({minDate:'%y-%M-01',maxDate:'%y-%M-%ld'})"/><br />
+&lt;input id=&quot;d423&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">minDate:</span><span class="STYLE1">'%y-%M-01',</span><span class="STYLE2">maxDate:</span><span class="STYLE1">'%y-%M-%ld'</span>})&quot;/&gt;</p>
+        </div>
+		<div>
+          <h4>ʾ��4-2-4 ֻ��ѡ�����7:00:00������21:00:00������</h4>
+          <p><input id="d424" class="Wdate" type="text" onfocus="WdatePicker({dateFmt:'yyyy-M-d H:mm:ss',minDate:'%y-%M-%d 7:00:00',maxDate:'%y-%M-{%d+1} 21:00:00'})"/><br />
+&lt;input id=&quot;d424&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onfocus=&quot;WdatePicker({dateFmt:'yyyy-M-d H:mm:ss',<span class="STYLE2">minDate:</span><span class="STYLE1">'%y-%M-%d 7:00:00',</span><span class="STYLE2">maxDate:</span><span class="STYLE1">'%y-%M-{%d+1} 21:00:00'</span>})&quot;/&gt;</p>
+        </div>
+		<div>
+          <h4>ʾ��4-2-5 <span class="STYLE2">ʹ����������ʽ</span> ֻ��ѡ�� 20Сʱǰ �� 30Сʱ�� ������</h4>
+          <p><input id="d425" class="Wdate" type="text" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'%y-%M-%d {%H-20}:%m:%s',maxDate:'%y-%M-%d {%H+30}:%m:%s'})"/><br />
+&lt;input id=&quot;d425&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onClick=&quot;WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',<span class="STYLE2">minDate:</span><span class="STYLE1">'%y-%M-%d {%H-20}:%m:%s'</span>,<span class="STYLE2">maxDate:</span><span class="STYLE1">'%y-%M-%d {%H+30}:%m:%s'</span>})&quot;/&gt;</p>
+        </div>
+              </LI>
+              <LI>�ű��Զ�������<a name="m243" id="m243"></a><br />
+                <span class="STYLE1">ע��:���ڸ�ʽ������ realDateFmt �� realTimeFmt һ�¶������� dateFmt һ��</span>
+                <p>ϵͳ�ṩ��$dp.$D��$dp.$DV������API�������������������,�����㻹����ͨ���� #F{} ���������Զ���Ľű�,���κ�����������������</p><div>
+          <h4>ʾ��4-3-1 ǰ������ڲ��ܴ��ں�����������������ڶ����ܴ��� 2020-10-01</h4>
+          <p>��ͬ��Ч�ڴ�
+            <input type="text" class="Wdate" id="d4311" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'d4312\')||\'2020-10-01\'}'})"/>
+��
+<input type="text" class="Wdate" id="d4312" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'d4311\')}',maxDate:'2020-10-01'})"/>
+<br />
+          &lt;input id=&quot;d4311&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">maxDate:</span><span class="STYLE1">'#F{$dp.$D(\'d4312\')||\'2020-10-01\'}'</span>})&quot;/&gt; <br />
+&lt;input id=&quot;d4312&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">minDate:</span><span class="STYLE1">'#F{$dp.$D(\'d4311\')}'</span>,<span class="STYLE2">maxDate:'2020-10-01'</span>})&quot;/&gt;<br />
+          <br />
+          <span class="STYLE1">ע��:</span><br />
+          �������ڵ����ڸ�ʽ������ͬ<br />
+          <br />$dp.$ �൱�� document.getElementById ����.<br />
+��ôΪʲô����� ' ʹ�� \' ��? ������Ϊ &quot; �� ' ������Χ�ĺ���ʹ����,��ʹ��ת��� \ ,�������ʾJS�﷨����.<br />
+�������������ط�ʹ��ʱע��� \' �ĳ� &quot; ���� ' ��ʹ��.<br />
+<br />
+#F{$dp.$D(\'d4312\')||\'2020-10-01\'}
+  ��ʾ�� d4312 Ϊ��ʱ, ���� 2020-10-01 ��ֵ��Ϊ���ֵ<br />
+          </p>
+        </div><div>
+          <h4>ʾ��4-3-2 ǰ�������+3�� ���ܴ��� ���������</h4>
+          <p>���ڴ�
+            <input type="text" class="Wdate" id="d4321" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'d4322\',{d:-3});}'})"/>
+��
+<input type="text" class="Wdate" id="d4322" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'d4321\',{d:3});}'})"/>
+<br />
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d4321&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">maxDate:</span><span class="STYLE1">'#F{$dp.$D(\'d4322\',{d:-3});}'</span>})&quot;/&gt;<br />
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d4322&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">minDate:</span><span class="STYLE1">'#F{$dp.$D(\'d4321\',{d:3});}'</span>})&quot;/&gt;<br />
+          <br />
+          ʹ�� <span class="STYLE2">$dp.$D ����</span> ���Խ����ڿ��е�ֵ,���϶�������ڲ���:<br />
+��������: <span class="STYLE1">id={�ַ�����}��Ҫ������ı����idֵ</span> , <span class="STYLE1">obj={��������}���ڲ���</span><br />
+<span class="STYLE2">���ڲ����÷�:</span><br />
+����y,M,d,H,m,s�ֱ����������ʱ����<br />
+�� <br />
+Ϊ��ʱ,��ʾֱ��ȡֵ,��������(ʾ��4-3-1�еĲ������ǿյ�)<br />
+{M:5,d:7} ��ʾ �������7��<br />
+{y:1,d:-3} ��ʾ 1����3��<br />
+{d:1,H:1} ��ʾһ���1Сʱ</p>
+        </div><div>
+          <h4>ʾ��4-3-3 ǰ�������+3����2�� ���ܴ��� ��������� �� ǰ�����ڶ����ܴ��� 2020-4-3��ȥ3����2�� �������� ���ܴ��� 2020-4-3</h4>
+          <p>ס�����ڴ�
+            <input type="text" class="Wdate" id="d4331" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'d4332\',{M:-3,d:-2})||$dp.$DV(\'2020-4-3\',{M:-3,d:-2})}'})"/>
+��
+<input type="text" class="Wdate" id="d4332" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'d4331\',{M:3,d:2});}',maxDate:'2020-4-3'})"/>
+<br />
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d4331&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">maxDate:</span>'<span class="STYLE1">#F{$dp.$D(\'d4332\',{M:-3,d:-2})||$dp.$DV(\'2020-4-3\',{M:-3,d:-2})}</span>'})&quot;/&gt;<br />
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d4332&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">minDate:</span>'<span class="STYLE1">#F{$dp.$D(\'d4331\',{M:3,d:2});}</span>',<span class="STYLE1">maxDate:</span>'<span class="STYLE1">2020-4-3</span>'})&quot;/&gt;<br />
+<br />
+<span class="STYLE1">ע��:<br />
+</span>#F{$dp.$D(\'d4332\',{M:-3,d:-2}) || $dp.$DV(\'2020-4-3\',{M:-3,d:-2})}<br />
+��ʾ�� d4332 Ϊ��ʱ, ���� $dp.$DV(\'2020-4-3\',{M:-3,d:-2})} ��ֵ��Ϊ���ֵ</p>
+          <p>ʹ�� <span class="STYLE2">$dp.$DV ����</span> ���Խ���ʽ�����ֵ,���϶�������ڲ���:<br />
+            ��������: <span class="STYLE1">value={�ַ�����}��Ҫ�����ֵ</span> , <span class="STYLE1">obj={��������}���ڲ���</span><br />
+            �÷�ͬ����� <span class="STYLE2">$dp.$D</span> ����,�� $dp.$DV(\'2020-4-3\',{M:-3,d:-2}) ��ʾ 2020-4-3��ȥ3����2��</p>
+        </div><div>
+          <h4>ʾ��4-3-4 �������JS����,�����κ�����Ҫ����������</h4>
+          <p>�Զ�ת��������ɵ�һ��,��Ȼ,��ʾ��û��ʵ�ʵ���;,ֻ��Ϊ��ʾĿ��<br />
+            <script>
+	//����һ�����������
+	function randomDate(){
+		var Y = 2000 + Math.round(Math.random() * 10);
+		var M = 1 + Math.round(Math.random() * 11);
+		var D = 1 + Math.round(Math.random() * 27);
+		return Y+'-'+M+'-'+D;
+	}
+            </script>
+            <input type="text" class="Wdate" id="d434" onfocus="var date=randomDate();WdatePicker({minDate:date,maxDate:date})"/>
+            <br />
+&lt;script&gt;<br />
+//����һ�����������<br />
+function randomDate(){<br />
+var Y = 2000 + Math.round(Math.random() * 10);<br />
+var M = 1 + Math.round(Math.random() * 11);<br />
+var D = 1 + Math.round(Math.random() * 27);<br />
+return Y+'-'+M+'-'+D;<br />
+}<br />
+&lt;/script&gt;<br />
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d434&quot; onFocus=&quot;<span class="STYLE1">var date=randomDate();WdatePicker({minDate:date,maxDate:date})</span>&quot;/&gt;</p>
+        </div>
+              </LI>
+              <LI>��Ч��<a name="m244" id="m244"></a>
+                <p>����ʹ�ô˹��ܽ�����������������Ӧ������,�������:disabledDays (0��6 �ֱ���� ����������)</p><div>
+          <h4>ʾ��4-4-1 ���� ���� ����Ӧ������</h4>
+          <p><input id="d441" type="text" class="Wdate" onFocus="WdatePicker({disabledDays:[6]})"/><br />
+&lt;input id=&quot;d441&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">disabledDays:</span><span class="STYLE1">[6]</span>})&quot;/&gt;</p>
+        </div><div>
+          <h4>ʾ��4-4-2 ���� ���� ���� ����Ӧ������</h4>
+          <p><input id="d442" type="text" class="Wdate" onFocus="WdatePicker({disabledDays:[0,6]})"/><br />            
+          &lt;input id=&quot;d442&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">disabledDays:</span><span class="STYLE1">[0,6]</span>})&quot;/&gt;</p>
+        </div>
+              </LI>
+              <LI>��Ч����<a name="m245" id="m245"></a><br />
+                <span class="STYLE1">ע��:���ڸ�ʽ������ realDateFmt �� realTimeFmt һ�¶������� dateFmt һ��</span>
+                <p>����ʹ�ô˹��ܽ���,��ָ����һ����������,ֻҪ����Ϥ������ʽ,����Ծ��鷢��<br /><br />
+                <span class="STYLE2">�÷�(����ƥ��):</span> <br />
+�������Ϥ������ʽ,���������������ƥ���÷�<br />
+�������Ϥ,���Բο�����ĳ���ʾ�� <br />
+['2008-02-01','2008-02-29'] ��ʾ���� 2008-02-01 �� 2008-02-29<br />
+['2008-..-01','2008-02-29'] ��ʾ���� 2008-�����·�-01 �� 2008-02-29<br />
+['200[0-8]]-02-01','2008-02-29'] ��ʾ���� [2000��2008]-02-01 �� 2008-02-29<br />
+['^2006'] ��ʾ���� 2006����������� </p>
+                <p>����,��������ʹ��  %y %M %d %H %m %s �ȱ���, �÷�ͬ��̬�������� <span class="STYLE1">ע��:%ld����ʹ��</span><br />
+                  ['....-..-01','%y-%M-%d'] ��ʾ���� ������ݺ������·ݵĵ�һ��ͽ��� <br />
+                  ['%y-%M-{%d-1}','%y-%M-{%d+1}'] ��ʾ���� ���������</p>
+                <p>��Ȼ,���˿���������������,������������ʱ��<br />
+                  ['....-..-.. 10\:00\:00'] ��ʾ���� ÿ��10�� (ע�� <span class="STYLE2">:</span> ��Ҫ ʹ�� <span class="STYLE2">\:</span> ) </p>
+                <p>���ٶ������,���鷢�����������ܰ�!</p>
+                <div>
+          <h4>ʾ��4-5-1 ���� ÿ���·ݵ� 5�� 15�� 25��</h4>
+          <p><input id="d451" type="text" class="Wdate" onFocus="WdatePicker({disabledDates:['5$']})"/><br />
+&lt;input id=&quot;d451&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">disabledDates:</span><span class="STYLE1">['5$']</span>})&quot;/&gt;<br />
+<br />
+<span class="STYLE1">ע��
+:</span><span class="STYLE2">'5$'</span> ��ʾ�� 5 ��β ע�� <span class="STYLE2">$</span> ���÷� </p>
+        </div><div>
+          <h4>ʾ��4-5-2 ���� ��������2000-01-01������</h4>
+          <p><input id="d452" type="text" class="Wdate" onFocus="WdatePicker({disabledDates:['^19']})"/><br />
+&lt;input id=&quot;d452&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">disabledDates:</span><span class="STYLE1">['^19']</span>})&quot;/&gt;<br />
+          <br />
+          <span class="STYLE1">ע��:</span><span class="STYLE2">'^19'</span> ��ʾ�� 19 ��ͷ ע�� <span class="STYLE2">^</span> ���÷� <br />
+          ��Ȼ,����ʹ��minDateʵ�����ƵĹ��� ������Ҫ�� ����ʾ ^ ���÷�</p>
+        </div><div>
+          <h4>ʾ��4-5-3 ���min/maxDateʹ��,���԰ѿ�ѡ������ڷָ��ɶ��</h4>
+          <p>��ʾ�����¿������ڷָ������ �ֱ���: 1-3 8-10 16-24 26,27 29-��ĩ<br />
+            <input id="d453" type="text" class="Wdate" onFocus="WdatePicker({minDate:'%y-%M-01',maxDate:'%y-%M-%ld',disabledDates:['0[4-7]$','1[1-5]$','2[58]$']})"/><br />
+&lt;input id=&quot;d453&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">minDate:</span><span class="STYLE1">'%y-%M-01'</span>,<span class="STYLE2">maxDate:</span><span class="STYLE1">'%y-%M-%ld'</span>,<span class="STYLE2">disabledDates:</span><span class="STYLE1">['0[4-7]$','1[1-5]$','2[58]$']</span>})&quot;/&gt;</p>
+        </div><div>
+          <h4>ʾ��4-5-4 <span class="STYLE2">min/maxDate disabledDays disabledDates ���ʹ��</span> ��ʹ��Ҫ��ǳ����̵������Ҳ����������</h4>
+          <p><input id="d454" type="text" class="Wdate" onFocus="WdatePicker({minDate:'%y-%M-01',maxDate:'%y-%M-%ld',disabledDates:['0[4-7]$','1[1-5]$','2[58]$'],disabledDays:[1,3,6]})"/><br />
+&lt;input id=&quot;d454&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">minDate:</span><span class="STYLE1">'%y-%M-01'</span>,<span class="STYLE2">maxDate:</span><span class="STYLE1">'%y-%M-%ld'</span>,<span class="STYLE2">disabledDates:</span><span class="STYLE1">['0[4-7]$','1[1-5]$','2[58]$']</span>,<span class="STYLE2">disabledDays:</span><span class="STYLE1">[1,3,6]</span>})&quot;/&gt;</p>
+        </div><div>
+          <h4>ʾ��4-5-5 ����ǰһ��Сʱ�ͺ�һ��Сʱ������ʱ�� ʹ�� %y %M %d %H %m %s �ȱ���</h4>
+          <p>����� Сʱ�����ʱ,��ᷢ�ֵ�Ȼʱ���Ӧ��ǰһ��Сʱ�ͺ�һ��Сʱ�ǻ�ɫ��<br />
+            <input id="d2a25" type="text" class="Wdate" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',disabledDates:['%y-%M-%d {%H-1}\:..\:..','%y-%M-%d {%H+1}\:..\:..']})"/>
+            <br />
+            &lt;input id=&quot;d2a25&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',<span class="STYLE2">disabledDates:</span><span class="STYLE1">['%y-%M-%d {%H-1}\:..\:..','%y-%M-%d {%H+1}\:..\:..']</span>})&quot;/&gt;          <br />
+            <br />
+            <span class="STYLE1">ע��:</span>%y %M %d�����<a href="#m242">��̬������</a></p>
+        </div><div>
+          <h4>ʾ��4-5-6  #F{}Ҳ�ǿ���ʹ�õ�</h4>
+          <p>��ʾ�������Զ��庯�� �������0-23�е��κ�һ��Сʱ<br />
+          ��Сʱѡ���,��ᷢ����һ��Сʱ�����õ�,����ÿ�ν��õ�Сʱ����ͬ<br />
+            <input type="text" class="Wdate" id="d456" onFocus="WdatePicker({dateFmt:'HH:mm:ss',disabledDates:['#F{randomH()}']})"/>
+			<script>
+function randomH(){
+//����һ����������� 0-23 
+var H = Math.round(Math.random() * 23);
+if(H<10) H='0'+H;
+//���� '^' + ����
+return '^'+H;
+}
+</script>
+              <br />
+&lt;script&gt;<br />
+function randomH(){<br />
+//����һ����������� 0-23 <br />
+var H = Math.round(Math.random() * 23);<br />
+if(H&lt;10) H='0'+H;<br />
+//���� '^' + ����<br />
+return '^'+H;<br />
+}<br />
+&lt;/script&gt;<br />
+&lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d456&quot; onFocus=&quot;WdatePicker({dateFmt:'HH:mm:ss',<span class="STYLE2">disabledDates:</span><span class="STYLE1">['#F{randomH()}']</span>})&quot;/&gt;</p>
+        </div></LI>
+        <li>��Ч����<a name="m246" id="m246"></a>
+		  <p>ʹ����Ч���ڿ��Ժܷ���Ľ��ò����õ�����,������ֻ��Ҫ�����ٲ������ڵ������,��Ч���ڵĹ��ܾͷǳ��ʺ���.<br />
+		    <span class="STYLE1">�ؼ�����:</span> <span class="STYLE2">opposite</span> Ĭ��Ϊfalse, Ϊtrueʱ,��Ч���ڱ����Ч����,<b>�����Զ���Ч��,�����첻������</b> </p>
+		  <div>
+          <h4>ʾ��4-6 ֻ���� ÿ���·ݵ� 5�� 15�� 25��</h4>
+          <p><input id="d46" type="text" class="Wdate" onFocus="WdatePicker({opposite:true,disabledDates:['5$']})"/><br />
+&lt;input id=&quot;d46&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">opposite:</span><span class="STYLE1">true</span>,<span class="STYLE2">disabledDates:</span><span class="STYLE1">['5$']</span>})&quot;/&gt;<br />
+<br />
+<span class="STYLE1">ע��
+:</span><span class="STYLE2">'5$'</span> ��ʾ�� 5 ��β ע�� <span class="STYLE2">$</span> ���÷� </p>
+        </div>
+		</li>
+		<li>���������������<a name="m247" id="m247"></a>
+		  <p><span class="STYLE1">��������������ڵ��÷�����ȫ��Ч�����Ч������ȫ��ͬ,����opposite���Զ�����Ч</span><br />
+		    <br />
+	      <span class="STYLE1">�ؼ�����:</span><br />
+			 <span class="STYLE2">specialDays </span>(0��6 �ֱ���� ����������) �÷�ͬ��Ч�� <br />
+		  <span class="STYLE2">specialDates</span>	�÷�ͬ��Ч����,���Ƕ�ʱ������Ч</p>
+		  <div>
+          <h4>ʾ��4-7-1 ����ÿ�� ��һ ����</h4>
+          <p><input id="d471" type="text" class="Wdate" onFocus="WdatePicker({specialDays:[1,5]})"/><br />
+&lt;input id=&quot;d471&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">specialDays:</span><span class="STYLE1">[1,5]</span>})&quot;/&gt; </p>
+        </div>
+        <div>
+          <h4>ʾ��4-7-2 ����ÿ�� 1�� 15��</h4>
+          <p><input id="d472" type="text" class="Wdate" onFocus="WdatePicker({specialDates:['....-..-01','....-..-15']})"/><br />
+&lt;input id=&quot;d472&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">specialDates:</span><span class="STYLE1">['....-..-01','....-..-15']</span>})&quot;/&gt; </p>
+        </div>
+		</li>
+    </oL>
+    <h3><a href="2.5.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp">5. �Զ����¼�</a><a name="m25" id="m25"></a></h3>
+<h3><a href="2.6.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.6.asp">6. ����ѡ����</a> <a name="m26" id="m26"></a></h3>
+    <h2><a href="3.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/3.asp">��. ����˵��</a><a name="m3" id="m3"></a></h2>
+    <h2><a href="999.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/999.asp">��. ���ʹ��</a><a name="m4" id="m4"></a></h2>
+    <br />
+    <br />
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="dCenter dBody" style="padding-left:72px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6343250634002651";
+/* �ײ� */
+google_ad_slot = "0599809152";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript">
+</script>
+</div>
+<div id="footer" class="dCenter">&copy; 2010 <a href="mailto:smallcarrot@163.com">My97</a> All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F489957c212e14340592fb2e4921b2f1d' type='text/javascript'%3E%3C/script%3E"));
+</script>&nbsp;&nbsp;&nbsp;&nbsp;��ICP��11060275��
+</div>
+</body>
+</html>

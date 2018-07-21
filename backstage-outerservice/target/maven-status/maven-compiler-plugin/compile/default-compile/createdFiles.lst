@@ -1,0 +1,13 @@
+com/ueater/backstage/outerservice/MessageApi.class
+com/ueater/backstage/outerservice/facade/IPriceApiHandler.class
+com/ueater/backstage/outerservice/ImageApi.class
+com/ueater/backstage/outerservice/CmsInfoApi.class
+com/ueater/backstage/outerservice/facade/IImageApiHandler.class
+com/ueater/backstage/outerservice/facade/impl/ImageApiHandler.class
+com/ueater/backstage/outerservice/MemberApi.class
+com/ueater/backstage/outerservice/facade/impl/ImageApiHandler$MultipartSupportImageClient$MultipartSupportConfig.class
+com/ueater/backstage/outerservice/ImageUploadApi.class
+com/ueater/backstage/outerservice/facade/impl/ImageApiHandler$MultipartSupportImageClient.class
+com/ueater/backstage/outerservice/FileUploadApi.class
+com/ueater/backstage/outerservice/CmsApi.class
+com/ueater/backstage/outerservice/facade/IProductApiHandler.class

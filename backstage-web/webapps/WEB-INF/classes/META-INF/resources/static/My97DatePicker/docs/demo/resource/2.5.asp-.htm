@@ -1,0 +1,260 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="���ڿؼ� datepicker calendar �����ؼ� javascript js�����ؼ� ��ʱ�� �Զ����ʽ �����ؼ� ����ʱ�� ����ѡ��" />
+<title>My97���ڿؼ� ������ʾ �Զ����¼� My97 Datepicker Demo</title>
+<link href="../../css/base.css" tppabs="http://www.my97.net/dp/css/base.css" rel="stylesheet" type="text/css" />
+<link href="demo.css" tppabs="http://www.my97.net/dp/demo/resource/demo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<iframe src="../../head.asp" tppabs="http://www.my97.net/dp/head.asp" scrolling="no" frameborder="0" height="100px" width="100%"></iframe>
+<script language="JavaScript" type="text/javascript" src="../../../WdatePicker.js" tppabs="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+<div class="dCenter dBody">
+  <div id="content">
+
+    <h2>��. ���ܼ�ʾ��<a name="m2" id="m2"></a></h2>
+<h3>5. �Զ����¼�<a name="m25" id="m25"></a></h3>
+    <ol>
+      <li>�Զ����¼�
+        <a name="m251" id="m251"></a>
+        <p>�������Ҫ��һЩ���ӵĲ���,��Ҳ���ص���,���ڿؼ��Դ����Զ����¼����������������.����,�㻹�������Զ����¼��е����ṩ��API������������������չ,���Կ���ͨ�����ٵĴ��������㼰����Ի�������.<br />
+          <br />
+          ע�����漸����Ҫ��ָ��,������ı�̴����ܶ����<br />
+          <span class="STYLE1">this: ָ���ı���<br />
+          dp: ָ��$dp<br />
+          dp.cal: ָ�����ڿؼ�����</span><br />
+          ע��:����ԭ�ͱ���ʹ������ <span class="STYLE1">function(dp){} </span>��ģʽ,������,�ں����ڲ��ſ���ʹ��dp</p>
+      </li>
+      <li>onpicking �� onpicked �¼�
+        <a name="m252" id="m252"></a>
+        <div>
+          <h4>ʾ��5-2-1 onpicking�¼���ʾ</h4>
+          <p>
+            <input type="text" id="5421" onFocus="WdatePicker({onpicking:function(dp){if(!confirm('���ڿ�ԭ����ֵΪ: '+dp.cal.getDateStr()+', Ҫ����ѡ���ֵ:' + dp.cal.getNewDateStr() + '������?')) return true;}})" class="Wdate"/>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;5421&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">onpicking:</span><span class="STYLE1">function(dp){if(!confirm('���ڿ�ԭ����ֵΪ: '+dp.cal.getDateStr()+', Ҫ����ѡ���ֵ:' + dp.cal.getNewDateStr() + '������?')) return true;}</span>})&quot; class=&quot;Wdate&quot;/&gt;<br />
+            <br />
+            <span class="STYLE1">ע��:</span>��ע�⵽dp.cal.getDateStr��dp.cal.getNewDateStr���÷�����? ���<a href="999.asp-.htm#m5" tppabs="http://www.my97.net/dp/demo/resource/999.asp?#m5">���ú���������</a></p>
+        </div>
+        <div>
+          <h4>ʾ��5-2-2 ʹ��onpickedʵ������ѡ������</h4>
+          <p>ѡ���һ�����ڵ�ʱ��,�ڶ�������ѡ����Զ�����<br />
+            ���ڴ�:
+            <input id="d5221" class="Wdate" type="text" onFocus="var d5222=$dp.$('d5222');WdatePicker({onpicked:function(){d5222.focus();},maxDate:'#F{$dp.$D(\'d5222\')}'})"/>
+            ��
+            <input id="d5222" class="Wdate" type="text" onFocus="WdatePicker({minDate:'#F{$dp.$D(\'d5221\')}'})"/>
+            <br />
+            <span class="STYLE1">ע��:</span>�����һ���ؼ������д��<br />
+            &lt;input id=&quot;<span class="STYLE1">d5221</span>&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onFocus=&quot;var d5222=$dp.$('d5222');WdatePicker({<span class="STYLE2">onpicked:</span><span class="STYLE1">function(){d5222.focus();}</span>,maxDate:'#F{$dp.$D(\'d5222\')}'})&quot;/&gt;<br />
+��<br />
+&lt;input id=&quot;<span class="STYLE1">d5222</span>&quot; class=&quot;Wdate&quot; type=&quot;text&quot; onFocus=&quot;WdatePicker({minDate:'#F{$dp.$D(\'d5221\')}'})&quot;/&gt;<br />
+            <br />
+            <span class="STYLE1">ע��:</span>$dp.$��һ��<a href="999.asp-.htm#m5" tppabs="http://www.my97.net/dp/demo/resource/999.asp?#m5">���ú���</a>,�൱��document.getElementById</p>
+        </div>
+        <div>
+          <h4>ʾ��5-2-3 ��ѡ���ֵ��ֵ��ı��� </h4>
+          <p>
+            <input type="text" id="d523_y" size="5"/>
+            ��
+            <input type="text" id="d523_M" size="3"/>
+            ��
+            <input type="text" id="d523_d" size="3"/>
+            ��
+            <input type="text" id="d523_HH" size="3"/>
+            ʱ
+            <input type="text" id="d523_mm" size="3"/>
+            ��
+            <input type="text" id="d523_ss" size="3"/>
+            ��
+            <input type="text" id="d523"/>
+            <img onclick="WdatePicker({el:'d523',dateFmt:'yyyy-MM-dd HH:mm:ss',onpicked:pickedFunc})" src="../../../skin/datePicker.gif" tppabs="http://www.my97.net/dp/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle" style="cursor:pointer"/>
+            <script>
+			function pickedFunc(){
+				$dp.$('d523_y').value=$dp.cal.getP('y');
+				$dp.$('d523_M').value=$dp.cal.getP('M');
+				$dp.$('d523_d').value=$dp.cal.getP('d');
+				$dp.$('d523_HH').value=$dp.cal.getP('H');
+				$dp.$('d523_mm').value=$dp.cal.getP('m');
+				$dp.$('d523_ss').value=$dp.cal.getP('s');
+			}
+			</script>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;d523_y&quot; size=&quot;5&quot;/&gt;
+            ��<br />
+            &lt;input type=&quot;text&quot; id=&quot;d523_M&quot; size=&quot;3&quot;/&gt;
+            ��<br />
+            &lt;input type=&quot;text&quot; id=&quot;d523_d&quot; size=&quot;3&quot;/&gt;
+            ��<br />
+            &lt;input type=&quot;text&quot; id=&quot;d523_HH&quot; size=&quot;3&quot;/&gt;
+            ʱ<br />
+            &lt;input type=&quot;text&quot; id=&quot;d523_mm&quot; size=&quot;3&quot;/&gt;
+            ��<br />
+            &lt;input type=&quot;text&quot; id=&quot;d523_ss&quot; size=&quot;3&quot;/&gt;
+            �� <br />
+            &lt;img onclick=&quot;WdatePicker({<span class="STYLE2">el:</span><span class="STYLE1">'d523'</span>,dateFmt:'yyyy-MM-dd HH:mm:ss',<span class="STYLE2">onpicked:</span><span class="STYLE1">pickedFunc</span>})&quot; src=&quot;../../../skin/datePicker.gif&quot; width=&quot;16&quot; height=&quot;22&quot; align=&quot;absmiddle&quot; style=&quot;cursor:pointer&quot;/&gt;<br />
+            <span class="STYLE1">&lt;script&gt;</span><br />
+            <span class="STYLE2">function</span> pickedFunc(){<br />
+            $dp.$('d523_y').value=$dp.cal.getP('y');<br />
+            $dp.$('d523_M').value=$dp.cal.getP('M');<br />
+            $dp.$('d523_d').value=$dp.cal.getP('d');<br />
+            $dp.$('d523_HH').value=$dp.cal.getP('H');<br />
+            $dp.$('d523_mm').value=$dp.cal.getP('m');<br />
+            $dp.$('d523_ss').value=$dp.cal.getP('s');<br />
+            }<br />
+            <span class="STYLE1">&lt;/script&gt;</span><br />
+            <br />
+            <span class="STYLE1">ע��:</span>el:'d523'��,����㲻��Ҫd523�����,����԰����ĳ�hidden,����el���Ա���ָ��<br />
+            $dp.$��$dp.cal.getP����<a href="999.asp-.htm#m5" tppabs="http://www.my97.net/dp/demo/resource/999.asp?#m5">���ú���</a> </p>
+        </div>
+      </li>
+      <li>onclearing �� oncleared �¼�
+        <a name="m253" id="m253"></a>
+        <div>
+          <h4>ʾ��5-3-1 ʹ��onclearing�¼�ȡ����ղ���</h4>
+          <p>
+            <input type="text" class="Wdate" id="d531" onFocus="WdatePicker({onclearing:function(){if(!confirm('���ڿ��ֵΪ:'+this.value+', ȷʵҪ�����?'))return true;}})"/>
+            <br />
+            &lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d531&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">onclearing:</span><span class="STYLE1">function(){if(!confirm('���ڿ��ֵΪ:'+this.value+', ȷʵҪ�����?'))return true;}</span>})&quot;/&gt;<br />
+            <br />
+            <span class="STYLE1">ע��:</span>��onclearing��������trueʱ,ϵͳ������¼�����ȡ��,<br />
+            ����������û������$dp,���Ժ���ԭ���������ʡ�Բ���dp </p>
+        </div>
+        <div>
+          <h4>ʾ��5-3-2 ʹ��cal����ȡ�õ�ǰ������ѡ����·�(ʹ���� dp.cal)</h4>
+          <p>
+            <input type="text" class="Wdate" id="d532" onFocus="WdatePicker({oncleared:function(dp){alert('��ǰ������ѡ����·�Ϊ:'+dp.cal.date.M);}})"/>
+            <br />
+            &lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d532&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">oncleared:</span><span class="STYLE1">function(dp){alert('��ǰ������ѡ����·�Ϊ:'+dp.cal.date.M);}</span>})&quot;/&gt;</p>
+        </div>
+        <div>
+          <h4>ʾ��5-3-3 �ۺ�ʹ�������¼�</h4>
+          <p>
+            <input type="text" class="Wdate" id="d533" onFocus="d533_focus(this)" value="2000-04-09"/>
+            <script>
+function d533_focus(element){
+var clearingFunc = function(){ if(!confirm('���ڿ��ֵΪ:'+this.value+', ȷʵҪ�����?')) return true; }
+var clearedFunc = function(){ alert('���ڿ��ѱ����'); }
+WdatePicker({el:element,onclearing:clearingFunc,oncleared:clearedFunc})
+}
+</script>
+            <br />
+            <span class="STYLE1">&lt;script&gt;</span><br />
+            <span class="STYLE2">function</span> d533_focus(element){<br />
+            var clearingFunc = function(){
+            if(!confirm('���ڿ��ֵΪ:'+this.value+', ȷʵҪ�����?')) return true;
+            }<br />
+            var clearedFunc = function(){
+            alert('���ڿ��ѱ����');
+            }<br />
+            WdatePicker({el:element,onclearing:clearingFunc,oncleared:clearedFunc})<br />
+            }<br />
+            <span class="STYLE1">&lt;/script&gt;</span><br />
+            &lt;input type=&quot;text&quot; class=&quot;Wdate&quot; id=&quot;d533&quot; onFocus=&quot;<span class="STYLE1">d533_focus(this)</span>&quot;/&gt;</p>
+        </div>
+      </li>
+      <li>������ʱ����� changing��changed <a name="m254" id="m254"></a> <p>������ʱ���붼�ж�Ӧ��changing��changed�¼�,�ֱ���:<br />
+        ychanging ychanged      <br />
+        Mchanging Mchanged<br />
+        dchanging dchanged<br />
+        Hchanging Hchanged<br />
+        mchanging mchanged<br />
+        schanging schanged      <br />
+        </p>
+        <div>
+          <h4>ʾ��5-4-1 �����ոı�ʱ������Ϣ</h4>
+          <p>
+            <input type="text" class="Wdate" id="d" onFocus="WdatePicker({dchanging:cDayFunc,Mchanging:cMonthFunc,ychanging:cYearFunc,dchanged:cDayFunc,Mchanged:cMonthFunc,ychanged:cYearFunc})"/>
+            <script>
+				function cDayFunc(){
+					cFunc('d');
+				}
+				function cMonthFunc(){
+					cFunc('M');
+				}
+				function cYearFunc(){
+					cFunc('y');
+				}
+				function cFunc(who){
+					var str,p,c = $dp.cal;
+					if(who=='y'){
+						str='���';
+						p='y';
+					}
+					else if(who=='M'){
+						str='�·�';
+						p='M';
+					}
+					else if(who=='d'){
+						str='����';
+						p='d';
+					}
+					alert(str+'�����ı���!\n$dp.cal.date.'+p+'='+c.date[p]+'\n$dp.cal.newdate.'+p+'='+c.newdate[p]);
+				}
+			</script>
+            <br />
+            &lt;input type=&quot;text&quot; class=&quot;Wdate&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">dchanging:<span class="STYLE1">cDayFunc</span>, Mchanging:</span><span class="STYLE1">cMonthFunc</span>,<span class="STYLE2"> ychanging:</span><span class="STYLE1">cYearFunc</span>,<span class="STYLE2"> dchanged:<span class="STYLE1">cDayFunc</span>, Mchanged:</span><span class="STYLE1">cMonthFunc</span>, <span class="STYLE2">ychanged:</span><span class="STYLE1">cYearFunc</span>})&quot;/&gt;<br />
+            <span class="STYLE1">&lt;script&gt;</span><br />
+            <span class="STYLE2">function</span> cDayFunc(){<br />
+cFunc('d');<br />
+}<br />
+<span class="STYLE2">function</span> cMonthFunc(){<br />
+cFunc('M');<br />
+}<br />
+<span class="STYLE2">function</span> cYearFunc(){<br />
+cFunc('y');<br />
+}<br />
+<span class="STYLE2">function</span> cFunc(who){<br />
+var str,p,c = $dp.cal;<br />
+if(who=='y'){<br />
+str='���';<br />
+p='y';<br />
+}<br />
+else if(who=='M'){<br />
+str='�·�';<br />
+p='M';<br />
+}<br />
+else if(who=='d'){<br />
+str='����';<br />
+p='d';<br />
+}<br />
+alert(str+'�����ı���!\n$dp.cal.date.'+p+'='+c.date[p]+'\n$dp.cal.newdate.'+p+'='+c.newdate[p]);<br />
+}<span class="STYLE1"><br />
+&lt;/script&gt;</span><br />
+<br />
+          ��������õ��� $dp.cal.date �� $dp.cal.newdate ����,���ܴ����﷢�����ǵĲ�֮ͬ����?<br />
+          �������й����������Ե��������<a href="999.asp.htm#m5" tppabs="http://www.my97.net/dp/demo/resource/999.asp#m5">���ú���������</a>
+          </p>
+        </div>
+        <p><br />
+        </p>
+      </li>
+    </ol>
+    <h3><a href="2.6.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.6.asp">6. ����ѡ����</a> <a name="m26" id="m26"></a></h3>
+    <h2><a href="3.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/3.asp">��. ����˵��</a><a name="m3" id="m3"></a></h2>
+    <h2><a href="999.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/999.asp">��. ���ʹ��</a><a name="m4" id="m4"></a></h2>
+    <br />
+    <br />
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="dCenter dBody" style="padding-left:72px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6343250634002651";
+/* �ײ� */
+google_ad_slot = "0599809152";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript">
+</script>
+</div>
+<div id="footer" class="dCenter">&copy; 2010 <a href="mailto:smallcarrot@163.com">My97</a> All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F489957c212e14340592fb2e4921b2f1d' type='text/javascript'%3E%3C/script%3E"));
+</script>&nbsp;&nbsp;&nbsp;&nbsp;��ICP��11060275��
+</div>
+</body>
+</html>

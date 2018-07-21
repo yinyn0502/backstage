@@ -1,0 +1,431 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="author" content="My97" /> 
+<meta name="keywords" content="���ڿؼ� datepicker calendar �����ؼ� javascript js�����ؼ� ��ʱ�� �Զ����ʽ �����ؼ� ����ʱ�� ����ѡ��" /><title>My97���ڿؼ� ������ʾ ����˵�� My97 Datepicker Demo</title>
+<link href="../../css/base.css" tppabs="http://www.my97.net/dp/css/base.css" rel="stylesheet" type="text/css" />
+<link href="demo.css" tppabs="http://www.my97.net/dp/demo/resource/demo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<iframe src="../../head.asp" tppabs="http://www.my97.net/dp/head.asp" scrolling="no" frameborder="0" height="100px" width="100%"></iframe>
+<script language="JavaScript" type="text/javascript" src="../../../WdatePicker.js" tppabs="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+<div class="dCenter dBody">
+  <div id="content">
+
+    <h2>��. ����˵��<a name="m3" id="m3"></a></h2>
+    <h3>1. ��������<a name="m31" id="m31"></a></h3>
+    <ol>
+      <li>���Ա�<a name="m311" id="m311"></a>
+        <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#000000">
+          <tr>
+            <th>����</th>
+            <th>����</th>
+            <th>Ĭ��ֵ</th>
+            <th>˵��</th>
+          </tr>
+          <tr>
+            <td colspan="4">��̬����:ֻ����WdatePicker.js������,һ�������,���������޸ľ�̬���Ե�ֵ</td>
+          </tr>
+          <tr>
+            <td align="center">$wdate</td>
+            <td align="center">bool</td>
+            <td align="center">true</td>
+            <td>�Ƿ��Զ�����Wdate�� ����Ϊtrueʱ,��ֱ��������WdatePicker.js��ҳ����ʹ�� class=&quot;Wdate&quot; <br />
+              Wdate����skinĿ¼�µ�WdatePicker.css�ļ��ж���<br />
+              <span class="STYLE2">����ʹ��Ĭ��ֵ</span></td>
+          </tr>
+          <tr>
+            <td align="center">$dpPath</td>
+            <td align="center">string</td>
+            <td align="center">''</td>
+            <td>�Ƿ���ʾָ��������ľ���λ��,һ�������Ϊ�ռ���(�����Զ�����),��������Ϊ��ֹ��������������³��򴴽���������õ�<br />
+              ���÷���:<br />
+              ���,���������http�еĵ�ַΪ http://localhost/proName/My97DatePicker/<br />
+              �� $dpPath = '/proName/My97DatePicker/';<br />
+              <span class="STYLE2">����ʹ��Ĭ��ֵ</span></td>
+          </tr>
+          <tr>
+            <td align="center">$crossFrame</td>
+            <td align="center">bool</td>
+            <td align="center">true</td>
+            <td>�Ƿ����,һ������Ϊtrue����,�����������ʱ���Խ��˹��ܹر�</td>
+          </tr>
+          <tr>
+            <td colspan="4">����������:������WdatePicker����������</td>
+          </tr>
+          <tr>
+            <td align="center">el</td>
+            <td align="center">Element �� String</td>
+            <td align="center">null</td>
+            <td>ָ��һ���ؼ���ؼ���ID,�������value��innerHTML����(��input,textarea,span,div,p�ȱ�ǩ������),�û��洢������ʾֵ(Ҳ����dateFmt��ʽ�����ֵ)</td>
+          </tr>
+          <tr>
+            <td align="center">vel</td>
+            <td align="center">Element �� String</td>
+            <td align="center">null</td>
+            <td>ָ��һ���ؼ���ؼ���ID,�������value����(��input),���ڴ洢��ʵֵ(Ҳ����realDateFmt��realTimeFmt��ʽ�����ֵ)</td>
+          </tr>
+          <tr>
+            <td align="center">doubleCalendar</td>
+            <td align="center">bool</td>
+            <td align="center">false</td>
+            <td>�Ƿ���˫��ģʽ,���������Ϊtrue,�򵯳�ͬʱ��ʾ2���µ����ڿ�</td>
+          </tr>
+          <tr>
+            <td align="center">enableKeyboard</td>
+            <td align="center">bool</td>
+            <td align="center">true</td>
+            <td>���̿��ƿ���</td>
+          </tr>
+          <tr>
+            <td align="center">enableInputMask</td>
+            <td align="center">bool</td>
+            <td align="center">true</td>
+            <td>�ı��������������뿪��</td>
+          </tr>
+          <tr>
+            <td align="center">autoUpdateOnChanged</td>
+            <td align="center">bool</td>
+            <td align="center">null</td>
+            <td>���޸�������ʱ�����Ԫ��ʱ,�Զ����µ�el,Ĭ���ǹرյ�(��:��Ҫ���ȷ���������ڲŸ���)<br />
+              Ϊfalseʱ ���Զ�����<br />
+Ϊtrueʱ �Զ�����<br />
+Ϊnullʱ(Ĭ��ֵ) �������Ԫ���Ҳ�����ȷ����ťʱ Ϊfalse,�������Ϊtrue</td>
+          </tr>
+          <tr>
+            <td align="center">weekMethod</td>
+            <td align="center">string</td>
+            <td align="center">ISO8601</td>
+            <td>���㷨��ͬ�ĵط���һЩ����<br />
+�����㷨������<br />
+1. ISO8601:�涨��һ��������Ϊ��һ��,Ĭ��ֵ<br />
+2. MSExcel:1��1�����ڵ���<br />
+<br />
+�������:<a href="javascript:if(confirm('http://en.wikipedia.org/wiki/ISO_week_date  \n\n���ļ�δ�� Teleport Pro ���أ���Ϊ ��λ����ʼ��ַ�����õı߽���������·���С�  \n\n����Ҫ�ӷ�����������?'))window.location='http://en.wikipedia.org/wiki/ISO_week_date'" tppabs="http://en.wikipedia.org/wiki/ISO_week_date" target="_blank">http://en.wikipedia.org/wiki/ISO_week_date</a></td>
+          </tr>
+          <tr>
+            <td align="center">position</td>
+            <td align="center">object</td>
+            <td align="center">{}</td>
+            <td> ����ѡ�����ʾλ��<br />
+              <span class="STYLE2">ע��:���굥λ��px,����Ե�ǰ�������(���ܹ�����Ӱ��),Ĭ�������ϵͳ����ҳ���С�Զ�ѡ��</span><br />
+              ��:<br />
+              {left:100,top:50}��ʾ�̶�����[100,50]<br />
+              {top:50}��ʾ�������Զ�����,������ָ��Ϊ 50<br />
+              {left:100}��ʾ�������Զ�����,������ָ��Ϊ 100<br />
+              ��ο�ʾ��</td>
+          </tr>
+          <tr>
+            <td align="center">lang</td>
+            <td align="center">string</td>
+            <td align="center">'auto'</td>
+            <td>��ֵΪ'auto'ʱ �Զ����ݿͻ���������������Զ�ѡ������<br />
+              ��ֵΪ ���� ʱ ��langList��ѡ���Ӧ������ <br />
+              ����Բο�<a href="#m32">��������</a></td>
+          </tr>
+          <tr>
+            <td align="center">skin</td>
+            <td align="center">string</td>
+            <td align="center">'default'</td>
+            <td>Ƥ������ Ĭ���Դ� default��whyGreen����Ƥ��<br />
+              ����������css��ǿ�Ļ�,�����Լ���Ƥ��<br />
+              ����Բο�<a href="#m33">Ƥ������</a></td>
+          </tr>
+          <tr>
+            <td align="center">dateFmt</td>
+            <td align="center">string</td>
+            <td align="center">'yyyy-MM-dd'</td>
+            <td>������ʾ��ʽ<br />
+            ����Բο�<a href="2.2.asp.htm#m224" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m224">�Զ����ʽ</a></td>
+          </tr>
+          <tr>
+            <td align="center">realDateFmt</td>
+            <td align="center">string</td>
+            <td align="center">'yyyy-MM-dd'</td>
+            <td rowspan="3">�������ʶ���,���������ڸ�ʽ<br />
+              <span class="STYLE2">��Ч��������(disabledDates),�������(maxDate),��С����(minDate)�Լ��������ڶ�������������ƥ��<br />
+              ����ʹ��Ĭ��ֵ</span></td>
+          </tr>
+          <tr>
+            <td align="center">realTimeFmt</td>
+            <td align="center">string</td>
+            <td align="center">'HH:mm:ss'</td>
+          </tr>
+          <tr>
+            <td align="center">realFullFmt</td>
+            <td align="center">string</td>
+            <td align="center">'%Date %Time'</td>
+          </tr>
+          <tr>
+            <td align="center">minDate</td>
+            <td align="center">string</td>
+            <td align="center">'1900-01-01 00:00:00'</td>
+            <td>��С����(ע��Ҫ�������real������ƥ��)</td>
+          </tr>
+          <tr>
+            <td align="center">maxDate</td>
+            <td align="center">string</td>
+            <td align="center">'2099-12-31 23:59:59'</td>
+            <td>�������(ע��Ҫ�������real������ƥ��)</td>
+          </tr>
+          <tr>
+            <td align="center">startDate</td>
+            <td align="center">string</td>
+            <td align="center">''</td>
+            <td> ��ʼ����,�ȵ�����ڿ�ʱ��ʾ����ʼ����<br />
+              Ϊ��ʱ,ʹ�ý�����Ϊ��ʼ����(Ĭ��ֵ)<br />
+              ����ʹ�ô����������Ϊ��ʼ����(ע��Ҫ�������real������ƥ��)<br />
+              ����Բο�<a href="2.2.asp.htm#m223" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m223">��ʼ����ʾ��</a></td>
+          </tr>
+          <tr>
+            <td align="center">firstDayOfWeek</td>
+            <td align="center">int</td>
+            <td align="center">0</td>
+            <td>�ܵĵ�һ�� 0��ʾ������ 1��ʾ����һ</td>
+          </tr>
+          <tr>
+            <td align="center">isShowWeek</td>
+            <td align="center">bool</td>
+            <td align="center">false</td>
+            <td>�Ƿ���ʾ��<br />
+              ����Բο�<a href="2.1.asp.htm#m213" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m213">����ʾʾ��</a></td>
+          </tr>
+          <tr>
+            <td align="center">highLineWeekDay</td>
+            <td align="center">bool</td>
+            <td align="center">true</td>
+            <td>�Ƿ������ʾ ���� ����</td>
+          </tr>
+          <tr>
+            <td align="center">isShowClear</td>
+            <td align="center">bool</td>
+            <td align="center">true</td>
+            <td>�Ƿ���ʾ��հ�ť</td>
+          </tr>
+          <tr>
+            <td align="center">isShowToday</td>
+            <td align="center">bool</td>
+            <td align="center">true</td>
+            <td>�Ƿ���ʾ���찴ť</td>
+          </tr>
+          <tr>
+            <td align="center">isShowOthers</td>
+            <td align="center">bool</td>
+            <td align="center">true</td>
+            <td>Ϊtrueʱ,��һ�пհ״���ʾ���µ����ڣ�ĩ�пհ״���ʾ���µ�����,������ʾ</td>
+          </tr>
+          <tr>
+            <td align="center">readOnly</td>
+            <td align="center">bool</td>
+            <td align="center">false</td>
+            <td>�Ƿ�ֻ��</td>
+          </tr>
+          <tr>
+            <td align="center">errDealMode</td>
+            <td align="center">int</td>
+            <td align="center">0</td>
+            <td>����ģʽ���� ������3��ģʽ 0 - ��ʾ 1 - �Զ����� 2 - ���</td>
+          </tr>
+          <tr>
+            <td align="center">autoPickDate</td>
+            <td align="center">bool</td>
+            <td align="center">null</td>
+            <td><a name="autopickdate" id="autopickdate"></a>Ϊfalseʱ �����ڵ�ʱ���Զ�����,����Ҫͨ��ȷ����������<br />
+              Ϊtrueʱ ��������ڼ��ɷ�������ֵ<br />
+              Ϊnullʱ(�Ƽ�ʹ��) �����ʱ����Ϊfalse ������Ϊtrue</td>
+          </tr>
+          <tr>
+            <td align="center">qsEnabled</td>
+            <td align="center">bool</td>
+            <td align="center">true</td>
+            <td>�Ƿ����ÿ���ѡ����</td>
+          </tr>
+          <tr>
+            <td align="center">autoShowQS</td>
+            <td align="center">bool</td>
+            <td align="center">false</td>
+            <td>�Ƿ�Ĭ����ʾ����ѡ��</td>
+          </tr>
+          <tr>
+            <td align="center">quickSel</td>
+            <td align="center">Array</td>
+            <td align="center">null</td>
+            <td>����ѡ������,���Դ���5������ѡ������<br />
+              ע��:���ڸ�ʽ������ realDateFmt  realTimeFmt realFullFmt ��ƥ��<br />
+              ����Բο�<a href="2.6.asp.htm#m26" tppabs="http://www.my97.net/dp/demo/resource/2.6.asp#m26">����ѡ��ʾ��</a></td>
+          </tr>
+          <tr>
+            <td align="center">disabledDays</td>
+            <td align="center">Array</td>
+            <td align="center">null</td>
+            <td>����ʹ�ô˹��ܽ�����������������Ӧ������<br />
+              0��6 �ֱ���� ����������<br />
+              ����Բο�<a href="2.4.asp.htm#m244" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m244">��Ч��ʾ��</a></td>
+          </tr>
+          <tr>
+            <td align="center">disabledDates</td>
+            <td align="center">Array</td>
+            <td align="center">null</td>
+            <td>����ʹ�ô˹��ܽ�����ָ����һ����������<br />
+            ����Բο�<a href="2.4.asp.htm#m245" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m245">��Ч����ʾ��</a></td>
+          </tr>
+          <tr>
+            <td align="center">opposite</td>
+            <td align="center">bool</td>
+            <td align="center">false</td>
+            <td>Ĭ��Ϊfalse, Ϊtrueʱ,��Ч���ڱ����Ч���� <br />
+                <span class="STYLE1">ע��:�����Զ���Ч�������첻������</span><br />
+            ����Բο�<a href="2.4.asp.htm#m246" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m246">��Ч����ʾ��</a></td>
+          </tr>
+          <tr>
+            <td align="center">specialDates</td>
+            <td align="center">Array</td>
+            <td align="center">null</td>
+            <td>��������,��ָ�������ڽ��и�����ʾ<br />
+            ����Բο�<a href="2.4.asp.htm#m247" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m247">����������������ʾ��</a></td>
+          </tr>
+          <tr>
+            <td align="center">specialDays</td>
+            <td align="center">Array</td>
+            <td align="center">null</td>
+            <td>������,ʹ�ô˹��ܽ�����������������Ӧ�����ڽ��и�����ʾ<br />
+            0��6 �ֱ���� ����������<br />
+            ����Բο�<a href="2.4.asp.htm#m247" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m247">����������������ʾ��</a></td>
+          </tr>
+          <tr>
+            <td align="center">onpicking</td>
+            <td align="center">function</td>
+            <td align="center">null</td>
+            <td rowspan="4">���ĸ�����Ϊ�¼�����<br />
+            ����Բο�<a href="2.5.asp.htm#m25" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp#m25">�Զ����¼�ʾ��</a></td>
+          </tr>
+          <tr>
+            <td align="center">onpicked</td>
+            <td align="center">function</td>
+            <td align="center">null</td>
+          </tr>
+          <tr>
+            <td align="center">onclearing</td>
+            <td align="center">function</td>
+            <td align="center">null</td>
+          </tr>
+          <tr>
+            <td align="center">oncleared</td>
+            <td align="center">function</td>
+            <td align="center">null</td>
+          </tr>
+          <tr>
+            <td align="center">ychanging ychanged <br />
+Mchanging Mchanged<br />
+dchanging dchanged<br />
+Hchanging Hchanged<br />
+mchanging mchanged<br />
+schanging schanged </td>
+            <td align="center">function</td>
+            <td align="center">null</td>
+            <td><span class="STYLE1">(4.6Beta3����)</span><br />
+              <br />
+              y M d H m s �ֱ��ʾ������ʱ����<br />
+              changing �¼����������Ըı�֮ǰ<br />
+            changed �¼����������Ըı�֮��<br />
+            <br />
+            ����Բο�<a href="2.5.asp-.htm#m254" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp?#m254">ʾ��5-4-1</a></td>
+          </tr>
+          
+        </table>
+      </li>
+      <li>����ȫ��Ĭ��ֵ<a name="m312" id="m312"></a>
+        <p>ͨ������WdatePicker.js�����Կ��Ա���ÿ�ε��ö���������ֵ,Ϊ��ɴ����ܶ෽��.<br />
+        ��Ĭ�������My97Ϊÿ�����Զ�������Ĭ��ֵ,��ЩĬ��ֵ��������WdatePicker.js���޸ĵ�<br />
+        ����Ը�������˵�ϲ�ø�����Щֵ<br />
+        <br />
+        ������Ƚϲ�ϲ��Ĭ�ϵ�Ƥ��default ����ϲ�� whyGreen ���Ƥ��,<br />
+        �����ֱ����WdatePicker.js��skinֵ��Ϊ whyGreen<br />
+        ����,���<span class="STYLE2">����ÿ�ε��ÿؼ���ʱ�򶼴���</span> skin:'whyGreen' ��<br />
+        ��ѧ������?</p>
+      </li>
+      <li>���õ����ؼ�<a name="m313" id="m313"></a>
+        <p>�ڿؼ����������ʹ�� onfocus �� onclick �¼�������WdatePicker�������������ڿؼ�<br />
+        WdatePicker({})����{}�е����ݶ���ֻ�Ե�ǰʵ����Ч,����������������Ա����е���������<br />
+        ���������������Щ����,�ﵽ�������<br />
+        My97���ڿؼ����ⷽ�������÷ǳ�����.</p>
+      </li>
+	  <li>�������ÿ����л�<a name="m314" id="m314"></a>
+        <p>���������ö��WdatePicker.js�ļ�,��
+cn_WdatePicker.js,en_WdatePicker.js,simple_WdatePicker.js��<br />
+        �ڲ�ͬ��ҳ�����벻ͬ��        WdatePicker.js �ﵽ���ÿ����л���Ŀ��.<br />
+        <span class="STYLE1">ע��:�ļ������� _WdatePicker.js(��Сд������) Ϊ��׺,���� &lt;yourname&gt;_WdatePicker.js</span></p>
+	  </li>
+    </ol>
+    <h3>2. ��������<a name="m32" id="m32"></a> </h3>
+    <ol>
+      <li>�����б�<a name="m321" id="m321"></a><p>My97DatePickerĿ¼���и�config.js(4.8�Ժ���WdatePicker.js��),�����жδ���: <br />
+        var <span class="STYLE1">langList</span> = <br />
+        [<br />
+{<span class="STYLE2">name:</span><span class="STYLE1">'en'</span>,		<span class="STYLE2">charset:</span><span class="STYLE1">'UTF-8'</span>},<br />
+{name:'zh-cn',	charset:'gb2312'},<br />
+{name:'zh-tw',	charset:'GBK'}<br />
+];<br />
+<br />
+����������б�,ÿ������name��charset��������.<br />
+name ��ʾ���Ե�����(������������������ַ���������ͬ),�����õ�ʱ��,<span class="STYLE2">lang����ֻ���������б��������е���,�����Զ����ص�һ��</span><br />
+charset ��ʾ��Ӧ����Ŀ¼�µ�js�ļ�����Ӧ�ı����ʽ</p>
+      </li>
+      <li>���԰�װ˵��<a name="m322" id="m322"></a>
+        <p>����������ʵ��:<br />
+        1 �������ļ������� lang Ŀ¼<br />
+        2 �� config.js ���������б�</p>
+      </li>
+    </ol>
+    <h3>3. Ƥ������<a name="m33" id="m33"></a></h3>
+    <ol>
+      <li>Ƥ���б�<a name="m331" id="m331"></a>
+      <p>My97DatePickerĿ¼���и�config.js(4.8�Ժ���WdatePicker.js��),�����жδ���:
+      <br />
+      var <span class="STYLE1">skinList</span> = <br />
+      [<br />
+{<span class="STYLE2">name:</span><span class="STYLE1">'default'</span>,	<span class="STYLE2">charset:</span><span class="STYLE1">'gb2312'</span>},<br />
+{name:'whyGreen',	charset:'gb2312'},<br />
+{name:'blue',		charset:'gb2312'},<br />
+{name:'simple',		charset:'gb2312'} <br />
+];<br />
+<br />
+      �����Ƥ���б�,ÿ������name��charset��������.<br />
+      name ��ʾƤ��������,�����õ�ʱ��,<span class="STYLE2">skin����ֻ���������б��������е���,�����Զ����ص�һ��</span><br />
+      charset ��ʾ��ӦƤ��Ŀ¼�µ�css�ļ�:datepicker.css����Ӧ�ı����ʽ</p>
+      </li>
+      <li>Ƥ����װ˵��<a name="m332" id="m332"></a><p>����������ʵ��:<br />
+1 ��Ƥ���ļ��������� skin Ŀ¼<br />
+2 �� config.js ����Ƥ���б�
+        <br />
+        <br />
+        <span class="STYLE1">ע��:��װ�����Ƥ����Ӱ������,һ��ֻ��װ�Լ�ʹ�õ�Ƥ��,3�����±Ƚ�����</span></p>
+      </li>
+    </ol>
+    <h2><a href="999.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/999.asp">��. ���ʹ��</a><a name="m4" id="m4"></a></h2>
+    <br />
+    <br />
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="dCenter dBody" style="padding-left:72px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6343250634002651";
+/* �ײ� */
+google_ad_slot = "0599809152";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript">
+</script>
+</div>
+<div id="footer" class="dCenter">&copy; 2010 <a href="mailto:smallcarrot@163.com">My97</a> All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F489957c212e14340592fb2e4921b2f1d' type='text/javascript'%3E%3C/script%3E"));
+</script>&nbsp;&nbsp;&nbsp;&nbsp;��ICP��11060275��
+</div>
+</body>
+</html>

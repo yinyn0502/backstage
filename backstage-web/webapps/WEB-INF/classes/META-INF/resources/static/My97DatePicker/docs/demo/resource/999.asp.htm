@@ -1,0 +1,177 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="���ڿؼ� datepicker calendar �����ؼ� javascript js�����ؼ� ��ʱ�� �Զ����ʽ �����ؼ� ����ʱ�� ����ѡ��" />
+<title>My97���ڿؼ� ������ʾ ���湦�� My97 Datepicker Demo</title>
+<link href="../../css/base.css" tppabs="http://www.my97.net/dp/css/base.css" rel="stylesheet" type="text/css" />
+<link href="demo.css" tppabs="http://www.my97.net/dp/demo/resource/demo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<iframe src="../../head.asp" tppabs="http://www.my97.net/dp/head.asp" scrolling="no" frameborder="0" height="100px" width="100%"></iframe>
+<script language="JavaScript" type="text/javascript" src="../../../WdatePicker.js" tppabs="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+<div class="dCenter dBody">
+  <div id="content">
+
+  	<h2><a href="main.asp" tppabs="http://www.my97.net/dp/demo/resource/main.asp"><strong>һ. ���</strong></a><a name="m2" id="m2"></a></h2>
+  	<h2><a href="2.1.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp"><strong>��. ���ܼ�ʾ��</strong></a><a name="m2" id="m2"></a></h2>
+    <h2><a href="3.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/3.asp">��. ����˵��</a><a name="m3" id="m3"></a></h2>
+    <h2>��. ���ʹ��<a name="m4" id="m4"></a></h2>
+    <p style="margin-left:20px">1. ��ʹ�ø����ڿؼ����ļ��м���JS��<span class="STYLE2">(����һ���ļ�����,�����ļ����Զ�����,����ɾ�������)</span>, ��������   &lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;   src=&quot;datepicker/WdatePicker.js&quot;&gt;&lt;/script&gt;<br />
+      ע:<span class="STYLE2">src=&quot;datepicker/WdatePicker.js&quot;</span> ��������ʵ������ı�·��<br />
+      <br />
+      2. ������������ WdatePicker<br />
+      ���� WdatePicker ���÷�:<span class="STYLE2"><br />
+      <br />
+      �����������,��js�����Ǻ��˽�Ļ�</span><span class="STYLE1">һ��Ҫ�࿴������ĵ�</span><br />
+      ������ÿһ����ʾ��ʾ�����涼����ش���,���� <span class="STYLE2">�ؼ����������ֱ��</span>,<span class="STYLE1">�ؼ�ֵ�ú��ֱ��</span> Ӧ�ú����׿����� <br />
+      <br />
+      <span class="STYLE2">�������һ����ˮ׼<br />
+      </span>ϣ���ܴ�ͷ��β�ѹ��ܽ��ܺúÿ�һ��,�����󲿷ֹ����㶼������<br />
+      <br />
+      <span class="STYLE2">������Ǹ���</span><br />
+      ������ͨ������˵�������ú���</p>
+    <h2>��. ���ú���������<a name="m5" id="m5"></a></h2>
+    <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#000000">
+      <tr>
+        <th>������</th>
+        <th>����ֵ����</th>
+        <th>������</th>
+        <th>����</th>
+        <th>����</th>
+      </tr>
+      <tr>
+        <td align="center">$dp.show</td>
+        <td align="center">void</td>
+        <td align="center">ȫ��</td>
+        <td>��</td>
+        <td>��ʾ����ѡ���</td>
+      </tr>
+      <tr>
+        <td align="center">$dp.hide</td>
+        <td align="center">void</td>
+        <td align="center">ȫ��</td>
+        <td>��</td>
+        <td>��������ѡ���</td>
+      </tr>
+      <tr>
+        <td align="center">$dp.$D</td>
+        <td align="center">String</td>
+        <td align="center">ȫ��</td>
+        <td><span class="STYLE2">id [string]:</span> �����ID <br />
+          <span class="STYLE2">arg [object]:</span> ���ڲ���,�������ó�<br />
+          {y:[ֵ],M:[ֵ],d:[ֵ],H:[ֵ],m:[ֵ],s:[ֵ]}<br />
+          ���� y,M,d,H,m,s �ֱ���� ������ʱ����<br />
+          {M:3,d:7} ��ʾ 3������7��<br />
+          {d:1,H:1} ��ʾ1���1Сʱ</td>
+        <td>��id��Ӧ�����ڿ��е������ַ���,���϶�������ڲ���,����ʹ��real��ʽ��������ڴ�<br />
+          <span class="STYLE2">�ο� ʾ�� 4-3-2</span></td>
+      </tr>
+      <tr>
+        <td align="center">$dp.$DV</td>
+        <td align="center">String</td>
+        <td align="center">ȫ��</td>
+        <td><span class="STYLE2">v [string]:</span> �����ַ���<br />
+          <span class="STYLE2">arg [object]:</span> ͬ������arg </td>
+        <td>������������ַ���,���϶�������ڲ���,����ʹ��real��ʽ��������ڴ�<br />
+          <span class="STYLE2">�ο� ʾ�� 4-3-3</span></td>
+      </tr>
+      <tr>
+        <td colspan="5">���º���ֻ���¼��Զ��庯������Ч</td>
+      </tr>
+      <tr>
+        <td align="center">$dp.cal.getP</td>
+        <td align="center">String</td>
+        <td align="center">�¼�function</td>
+        <td><span class="STYLE2">p [string]:</span> �������� yMdHmswWD�ֱ������,��,��,ʱ,��,��,����(0-6),��(1-52),����(һ-��) <br />
+          <span class="STYLE2">f [string]:</span> format ��ʽ�ַ���<br />
+          ���÷����ο� <span class="STYLE2">1.4 �Զ����ʽ</span></td>
+        <td>������ָ�����Ա���ʽ�ַ�����ʽ�����ֵ[������],��changing,picking,clearing�¼��з���<span class="STYLE1">ѡ��ǰ</span>��ֵ<br />
+          <span class="STYLE2">�ο� ʾ�� 1-2-2</span></td>
+      </tr>
+      <tr>
+        <td align="center">$dp.cal.getDateStr</td>
+        <td align="center">String </td>
+        <td align="center">�¼�function</td>
+        <td><span class="STYLE2">f [string]:</span> ��ʽ�ַ���,Ϊ��ʱʹ��dateFmt<br /></td>
+        <td>������ָ�����Ա���ʽ�ַ�����ʽ�����ֵ[����ֵ],��changing,picking,clearing�¼��з���<span class="STYLE1">ѡ��ǰ</span>��ֵ</td>
+      </tr>
+      <tr>
+        <td align="center">        $dp.cal.getNewP</td>
+        <td align="center">String</td>
+        <td align="center">�¼�function</td>
+        <td>�÷�ͬ$dp.cal.getP</td>
+        <td>������ָ�����Ա���ʽ�ַ�����ʽ�����ֵ[������],��changing,picking,clearing�¼��з���<span class="STYLE1">ѡ���</span>��ֵ</td>
+      </tr>
+      <tr>
+        <td align="center">        $dp.cal.getNewDateStr</td>
+        <td align="center">String</td>
+        <td align="center">�¼�function</td>
+        <td>�÷�ͬ$dp.cal.getDateStr</td>
+        <td>������ָ�����Ա���ʽ�ַ�����ʽ�����ֵ[����ֵ],��changing,picking,clearing�¼��з���<span class="STYLE1">ѡ���</span>��ֵ</td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#000000">
+      <tr>
+        <th width="14%">������</th>
+        <th width="10%">����ֵ����</th>
+        <th width="11%">������</th>
+        <th width="29%">����</th>
+        <th width="36%">����</th>
+      </tr>
+      <tr>
+        <td align="center">          $dp.cal.date</td>
+        <td align="center">object</td>
+        <td align="center">�¼�function</td>
+        <td>$dp.cal.date.y:���� ��<br />
+          $dp.cal.date.M:���� ��<br />
+          $dp.cal.date.d:���� ��<br />
+          $dp.cal.date.H:���� ʱ<br />
+          $dp.cal.date.m:���� ��<br />
+          $dp.cal.date.s:���� �� <br /></td>
+        <td>��changing,picking,clearing�¼��з���<span class="STYLE1">ѡ��ǰ</span>�����ڶ���</td>
+      </tr>
+      <tr>
+        <td align="center">          $dp.cal.newdate</td>
+        <td align="center">object</td>
+        <td align="center">�¼�function</td>
+        <td>�÷�ͬ$dp.cal.date</td>
+        <td>��changing,picking,clearing�¼��з���<span class="STYLE1">ѡ���</span>�����ڶ���</td>
+      </tr>
+    </table>
+<h2>��. ���ѽ��<a name="m6" id="m6"></a></h2>
+    <p style="margin-left:20px">�κ�����,���Ȳο� <a href="javascript:if(confirm('http://www.my97.net/dp/support.asp  \n\n���ļ�δ�� Teleport Pro ���أ���Ϊ ��λ����ʼ��ַ�����õı߽���������·���С�  \n\n����Ҫ�ӷ�����������?'))window.location='http://www.my97.net/dp/support.asp'" tppabs="http://www.my97.net/dp/support.asp" target="_top">����֧��</a> <br />
+      ����Ҳ�����,������ֱ����blog����,����ͨ���������ϵ��ʽ������ϵ</p>
+    <h2>��. ��ϵMy97<a name="m7" id="m7"></a></h2>
+    <p style="margin-left:20px"> * �������ʹ�ù�������������,�����и��õĽ���<br />
+      * ��ӭ������<br />
+      * BLOG: <a href="javascript:if(confirm('http://my97.cnblogs.com/  \n\n���ļ�δ�� Teleport Pro ���أ���Ϊ ��λ����ʼ��ַ�����õı߽���������·���С�  \n\n����Ҫ�ӷ�����������?'))window.location='http://my97.cnblogs.com/'" tppabs="http://my97.cnblogs.com/">http://my97.cnblogs.com</a><br />
+      * MAIL: support$my97.net($����@)<br />
+      * ����������blog���Ի����Email��,<span class="STYLE1">�������ϸ��˵��,�ܶ����ⶼ����Ϊû����ϸ��˵�����µ�</span> </p>
+    <br />
+    <br />
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="dCenter dBody" style="padding-left:72px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6343250634002651";
+/* �ײ� */
+google_ad_slot = "0599809152";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript">
+</script>
+</div>
+<div id="footer" class="dCenter">&copy; 2010 <a href="mailto:smallcarrot@163.com">My97</a> All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F489957c212e14340592fb2e4921b2f1d' type='text/javascript'%3E%3C/script%3E"));
+</script>&nbsp;&nbsp;&nbsp;&nbsp;��ICP��11060275��
+</div>
+</body>
+</html>

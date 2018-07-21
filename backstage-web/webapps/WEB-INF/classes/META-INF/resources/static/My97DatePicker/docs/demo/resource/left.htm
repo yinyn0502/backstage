@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="���ڿؼ� datepicker calendar �����ؼ� javascript js�����ؼ� ��ʱ�� �Զ����ʽ �����ؼ� ����ʱ�� ����ѡ��" />
+<title>My97 DatePicker ��ʾ - Ŀ¼����</title>
+<base target="mainFrm" />
+<link href="../../css/base.css" tppabs="http://www.my97.net/dp/css/base.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+a {
+	text-decoration: none;
+	color: #555;
+}
+-->
+</style>
+</head>
+<body>
+<DIV class=res-block style="text-align:left;margin:10px 5px 10px 10px">
+  <DIV class=res-block-inner>
+    <h3>My97DatePicker ��ʾ���ĵ�</h3>
+    <h3><a href="main.asp#m1" tppabs="http://www.my97.net/dp/demo/resource/main.asp#m1">һ. ���</a></h3>
+    <UL>
+      <LI><a href="main.asp#m11" tppabs="http://www.my97.net/dp/demo/resource/main.asp#m11">���</a></LI>
+      <LI><a href="main.asp#m12" tppabs="http://www.my97.net/dp/demo/resource/main.asp#m12">ע������</a></LI>
+      <LI><a href="main.asp#m13" tppabs="http://www.my97.net/dp/demo/resource/main.asp#m13">֧�ֵ������</a></LI>
+    </UL>
+    <h3><a href="2.1.asp.htm#m2" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m2">��. ���ܼ�ʾ��</a></h3>
+    <ul>
+      <LI><a href="2.1.asp.htm#m21" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m21">���湦��</a>
+        <UL style="list-style-type:square">
+          <LI><a href="2.1.asp.htm#m211" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m211">֧�ֶ��ֵ���ģʽ</a></LI>
+          <LI><a href="2.1.asp.htm#m212" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m212">����,����,����ѡ������</a></LI>
+          <LI><a href="2.1.asp.htm#m213" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m213">֧������ʾ</a></LI>
+          <LI><a href="2.1.asp.htm#m214" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m214">ֻ������,������ĩ����</a></LI>
+          <LI><a href="2.1.asp.htm#m215" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m215">������ť�Զ���</a></LI>
+          <li><a href="2.1.asp.htm#m216" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m216">�Զ�ѡ����ʾλ��</a></li>
+          <li><a href="2.1.asp.htm#m217" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m217">�Զ��嵯��λ��</a></li>
+          <li><a href="2.1.asp.htm#m218" tppabs="http://www.my97.net/dp/demo/resource/2.1.asp#m218">�Զ������ڵĵ�һ��</a><font color="red">new</font></li>
+        </UL>
+      </LI>
+      <LI><a href="2.2.asp.htm#m22" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m22">��ɫ����</a>
+        <UL style="list-style-type:square">
+          <LI><a href="2.2.asp.htm#m221" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m221">ƽ����ʾ</a></LI>
+          <LI><a href="2.2.asp.htm#m222" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m222">֧�ֶ�������</a></LI>
+          <LI><a href="2.2.asp.htm#m223" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m223">��ʼ���ڹ���</a></LI>
+          <LI><a href="2.2.asp.htm#m224" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m224">�Զ����ʽ</a><font color="red">new</font></LI>
+          <LI><a href="2.2.asp.htm#m225" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m225">˫����������</a><font color="red">new</font></LI>
+          <LI><a href="2.2.asp.htm#m226" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m226">�Զ�������</a></LI>
+          <LI><a href="2.2.asp.htm#m227" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m227">�����޼������ʾ</a></LI>
+          <LI><a href="2.2.asp.htm#m228" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m228">�����������������������</a></LI>
+          <LI><a href="2.2.asp.htm#m229" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m229">�༭����</a></LI>
+          <LI><a href="2.2.asp.htm#m22a" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m22a">Ϊ��̴�������</a></LI>
+          <LI><a href="2.2.asp.htm#m22b" tppabs="http://www.my97.net/dp/demo/resource/2.2.asp#m22b">��������</a></LI>
+        </UL>
+      </LI>
+      <LI><a href="2.3.asp.htm#m23" tppabs="http://www.my97.net/dp/demo/resource/2.3.asp#m23">�����Ժ��Զ���Ƥ��</a>
+        <UL style="list-style-type:square">
+          <LI><a href="2.3.asp.htm#m231" tppabs="http://www.my97.net/dp/demo/resource/2.3.asp#m231">������֧��</a></LI>
+          <LI><a href="2.3.asp.htm#m232" tppabs="http://www.my97.net/dp/demo/resource/2.3.asp#m232">�Զ���Ͷ�̬�л�Ƥ��</a></LI>
+        </UL>
+      </LI>
+      <LI><a href="2.4.asp.htm#m24" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m24">���ڷ�Χ����</a>
+        <UL style="list-style-type:square">
+          <LI><a href="2.4.asp.htm#m241" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m241">��̬����</a></LI>
+          <LI><a href="2.4.asp.htm#m242" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m242">��̬����</a></LI>
+          <LI><a href="2.4.asp.htm#m243" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m243">�ű��Զ�������</a></LI>
+          <LI><a href="2.4.asp.htm#m244" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m244">��Ч��</a></LI>
+          <LI><a href="2.4.asp.htm#m245" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m245">��Ч����</a></LI>
+          <LI><a href="2.4.asp.htm#m246" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m246">��Ч����</a></LI>
+          <LI><a href="2.4.asp.htm#m247" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp#m247">���������������<font color="red">new</font></a></LI>
+        </UL>
+      </LI>
+      <LI><a href="2.5.asp.htm#m25" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp#m25">�Զ����¼�</a></LI>
+	  <UL style="list-style-type:square"><li><a href="2.5.asp.htm#m251" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp#m251">�Զ����¼�</a></li>
+	    <li><a href="2.5.asp.htm#m252" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp#m252">onpicking��onpicked�¼�</a></li>
+	    <li><a href="2.5.asp.htm#m253" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp#m253">onclearing��oncleared�¼�</a></li>
+	    <li><a href="2.5.asp.htm#m254" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp#m254">changing��changed�¼�</a></li>
+	  </ul>
+      <LI><a href="2.6.asp.htm#m26" tppabs="http://www.my97.net/dp/demo/resource/2.6.asp#m26">����ѡ����</a></LI>
+    </ul>
+    <h3><a href="3.asp.htm#m3" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m3">��. ����˵��</a></h3>
+    <ul>
+      <LI><a href="3.asp.htm#m31" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m31">��������</a>
+        <ul style="list-style-type:square">
+          <LI><a href="3.asp.htm#m311" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m311">���Ա�</a></LI>
+          <LI><a href="3.asp.htm#m312" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m312">����ȫ��Ĭ��ֵ</a></LI>
+          <LI><a href="3.asp.htm#m313" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m313">���õ����ؼ�</a></LI>
+          <LI><a href="3.asp.htm#m314" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m314">�������ÿ����л�</a></LI>
+        </ul>
+      </LI>
+      <LI><a href="3.asp.htm#m32" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m32">��������
+        </a>
+        <ul style="list-style-type:square">
+          <LI><a href="3.asp.htm#m321" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m321">�����б�</a></LI>
+          <LI><a href="3.asp.htm#m322" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m322">���԰�װ˵��</a></LI>
+        </ul>
+      </LI>
+      <LI style="list-style-type:square"><a href="3.asp.htm#m33" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m33">Ƥ������</a>
+        <ul>
+          <LI><a href="3.asp.htm#m331" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m331">Ƥ���б�</a></LI>
+          <LI><a href="3.asp.htm#m332" tppabs="http://www.my97.net/dp/demo/resource/3.asp#m332">Ƥ����װ˵��</a></LI>
+        </ul>
+      </LI>
+    </ul>
+    <h3><a href="999.asp.htm#m4" tppabs="http://www.my97.net/dp/demo/resource/999.asp#m4">��. ���ʹ��</a></h3>
+    <h3><a href="999.asp.htm#m5" tppabs="http://www.my97.net/dp/demo/resource/999.asp#m5">��. ���ú���������</a></h3>
+    <h3><a href="999.asp.htm#m6" tppabs="http://www.my97.net/dp/demo/resource/999.asp#m6">��. ���ѽ��</a></h3>
+    <h3><a href="999.asp.htm#m7" tppabs="http://www.my97.net/dp/demo/resource/999.asp#m7">��. ��ϵMy97</a></h3>
+	<br>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F489957c212e14340592fb2e4921b2f1d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+  </DIV>
+  <DIV class=res-block-bottom></DIV>
+</DIV>
+</body>
+</html>

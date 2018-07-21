@@ -1,0 +1,382 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="���ڿؼ� datepicker calendar �����ؼ� javascript js�����ؼ� ��ʱ�� �Զ����ʽ �����ؼ� ����ʱ�� ����ѡ��" />
+<title>My97���ڿؼ� ������ʾ ��ɫ���� ���湦�� My97 Datepicker Demo</title>
+<link href="../../css/base.css" tppabs="http://www.my97.net/dp/css/base.css" rel="stylesheet" type="text/css" />
+<link href="demo.css" tppabs="http://www.my97.net/dp/demo/resource/demo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<iframe src="../../head.asp" tppabs="http://www.my97.net/dp/head.asp" scrolling="no" frameborder="0" height="100px" width="100%"></iframe>
+<script language="JavaScript" type="text/javascript" src="../../../WdatePicker.js" tppabs="http://www.my97.net/dp/My97DatePicker/WdatePicker.js"></script>
+<div class="dCenter dBody">
+  <div id="content">
+
+    <h2>��. ���ܼ�ʾ��<a name="m2" id="m2"></a></h2>
+<h3>2. ��ɫ���� <a name="m22" id="m22"></a></h3>
+    <ol>
+      <li>ƽ����ʾ
+        <a name="m221" id="m221"></a>
+        <p>���ڿؼ�֧��ƽ����ʾ����,ֻҪ����һ��eCont���ԾͿ��԰�������������ʹ����,���败������,ֱ����ʾ��ҳ����</p>
+        <br />
+        <div>
+          <h4>ʾ��2-1 ƽ����ʾ��ʾ</h4>
+          <div id="div1" style="border:0;padding:5px"></div>
+          <script> 
+WdatePicker({eCont:'div1',onpicked:function(dp){alert('��ѡ���������:'+dp.cal.getDateStr())}})
+</script>
+          <p> &lt;div id=&quot;<span class="STYLE1">div1</span>&quot;&gt;&lt;/div&gt;<br />
+            &lt;script&gt;<br />
+            WdatePicker({<span class="STYLE2">eCont:</span><span class="STYLE1">'div1'</span>,onpicked:function(dp){alert('��ѡ���������:'+dp.cal.getDateStr())}})<br />
+            &lt;/script&gt;<br />
+            <br />
+            $dp.cal.getDateStr �÷����<a href="999.asp.htm#m5" tppabs="http://www.my97.net/dp/demo/resource/999.asp#m5">���ú���������</a></p>
+        </div>
+      </li>
+      <li>֧�ֶ�������
+        <a name="m222" id="m222"></a>
+        <p>���˿��Խ�ֵ���ظ�input����,������ͨ������el���Խ�ֵ���ظ�������Ԫ��(��:textarea,div,span)��,����innerHTML���Ե�HTMLԪ��</p>
+        <div>
+          <h4>ʾ��2-2 �����ڷ��ص�&lt;span&gt;��</h4>
+          <p><span id="demospan">2008-01-01</span> <img onClick="WdatePicker({el:'demospan'})" src="../../../skin/datePicker.gif" tppabs="http://www.my97.net/dp/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle" style="cursor:pointer" /><br />
+            <br />
+            ����:<br />
+            &lt;span id=&quot;<span class="STYLE1">demospan</span>&quot;&gt;2008-01-01&lt;/span&gt; <br />
+            &lt;img onClick=&quot;WdatePicker({<span class="STYLE2">el:</span><span class="STYLE1">'demospan'</span>})&quot; src=&quot;../../../skin/datePicker.gif&quot; width=&quot;16&quot; height=&quot;22&quot; align=&quot;absmiddle&quot; style=&quot;cursor:pointer&quot;  /&gt;</p>
+        </div>
+      </li>
+      <li>��ʼ���ڹ��� <a name="m223" id="m223"></a><br />
+        <span class="STYLE1">ע��:���ڸ�ʽ������ realDateFmt �� realTimeFmt һ�¶������� dateFmt һ��</span>
+        <p>��ʱ����Ŀ����Ҫѡ������֮�������,��Ĭ�ϵ㿪ʼ���ڶ��ǵ�ǰ����,�������ѡ��ǳ��鷳,�����ͨ����ʼ���ڹ��ܼ�������alwaysUseStartDate�������ɽ����������</p>
+        <div>
+          <h4>ʾ��2-3-1 ��ʼ���ڼ�Ӧ�� </h4>
+          <p>Ĭ�ϵ���ʼ����Ϊ 1980-05-01<br />
+            �����ڿ�<span class="STYLE2">Ϊ��ֵʱ</span>,��ʹ�� 1980-05-01 ��Ϊ��ʼ���� <br />
+            <br />
+            <input type="text" id="d221" onFocus="WdatePicker({startDate:'1980-05-01'})"/>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;d221&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">startDate:</span><span class="STYLE1">'1980-05-01'</span>})&quot;/&gt;</p>
+        </div>
+        <div>
+          <h4>ʾ��2-3-2 alwaysUseStartDate����Ӧ��</h4>
+          <p>Ĭ�ϵ���ʼ����Ϊ 1980-05-01<br />
+            �����ڿ�<span class="STYLE2">�����Ǻ�ֵ</span>,ʼ��ʹ�� 1980-05-01 ��Ϊ��ʼ���� <br />
+            <br />
+            <input type="text" id="d222" onfocus="WdatePicker({startDate:'1980-05-01',alwaysUseStartDate:true})"/>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;d222&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">startDate:</span><span class="STYLE1">'1980-05-01'</span>,<span class="STYLE2">alwaysUseStartDate:</span><span class="STYLE1">true</span>})&quot;/&gt;</p>
+        </div>
+        <div>
+          <h4>ʾ��2-3-3 ʹ�����ò���</h4>
+          <p>����ʹ�þ�̬������ֵ����,������ʹ�ö�̬����(��:%y,%M�ֱ��ʾ��ǰ�����)<br />
+            <br />
+            ������ʾ,<span class="STYLE2">������ʹ�õ��굱�µ�1��,ʱ����ʹ��00:00:00��Ϊ��ʼʱ��</span><br />
+            <br />
+            <input type="text" id="d233" onFocus="WdatePicker({startDate:'%y-%M-01 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})"/>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;d233&quot; onFocus=&quot;WdatePicker({<span class="STYLE2">startDate:</span><span class="STYLE1">'%y-%M-01 00:00:00'</span>,dateFmt:'yyyy-MM-dd HH:mm:ss',<span class="STYLE2">alwaysUseStartDate:</span><span class="STYLE1">true</span>})&quot;/&gt;</p>
+        </div>
+      </li>
+      <li>�Զ����ʽ
+        <a name="m224" id="m224"></a>
+        <p>yMdHmswW�ֱ����������ʱ����������,��������������ЩԪ�����Զ�������Ի������ڸ�ʽ. </p>
+        <br />
+        ���ڸ�ʽ��
+        <table width="100%" border="0" cellspacing="1" bgcolor="#000000">
+          <tr>
+            <th width="12%">��ʽ</th>
+            <th width="88%">˵��</th>
+          </tr>
+          <tr>
+            <td align="center">y</td>
+            <td>����ݱ�ʾΪ�����λ���֡������ݶ�����λ���������н���ʾ��λ��λ����</td>
+          </tr>
+          <tr>
+            <td align="center">yy </td>
+            <td>ͬ�ϣ����С����λ����ǰ�油�㡣</td>
+          </tr>
+          <tr>
+            <td align="center">yyy</td>
+            <td>����ݱ�ʾΪ��λ���֡����������λ����ǰ�油�㡣</td>
+          </tr>
+          <tr>
+            <td align="center">yyyy</td>
+            <td>����ݱ�ʾΪ��λ���֡����������λ����ǰ�油�㡣</td>
+          </tr>
+          <tr>
+            <td align="center">M</td>
+            <td>���·ݱ�ʾΪ�� 1 �� 12 ������</td>
+          </tr>
+          <tr>
+            <td align="center">MM</td>
+            <td>ͬ�ϣ����С����λ����ǰ�油�㡣</td>
+          </tr>
+          <tr>
+            <td align="center">MMM</td>
+            <td>�����·ݵ���д һ�� �� ʮ���� (Ӣ��״̬�� Jan to Dec) ��</td>
+          </tr>
+          <tr>
+            <td align="center">MMMM</td>
+            <td>�����·ݵ�ȫ�� һ�� �� ʮ���� (Ӣ��״̬�� January to December) ��</td>
+          </tr>
+          <tr>
+            <td align="center">d</td>
+            <td>���������ڱ�ʾΪ�� 1 �� 31 �����֡�</td>
+          </tr>
+          <tr>
+            <td align="center">dd</td>
+            <td>ͬ�ϣ����С����λ����ǰ�油�㡣</td>
+          </tr>
+          <tr>
+            <td align="center">H </td>
+            <td>��Сʱ��ʾΪ�� 0 �� 23 �����֡�</td>
+          </tr>
+          <tr>
+            <td align="center">HH</td>
+            <td>ͬ�ϣ����С����λ����ǰ�油�㡣</td>
+          </tr>
+          <tr>
+            <td align="center">m</td>
+            <td>�����ӱ�ʾΪ�� 0 �� 59 �����֡�</td>
+          </tr>
+          <tr>
+            <td align="center">mm</td>
+            <td>ͬ�ϣ����С����λ����ǰ�油�㡣</td>
+          </tr>
+          <tr>
+            <td align="center">s</td>
+            <td>�����ʾΪ�� 0 �� 59 �����֡�</td>
+          </tr>
+          <tr>
+            <td align="center">ss</td>
+            <td>ͬ�ϣ����С����λ����ǰ�油�㡣</td>
+          </tr>
+          <tr>
+            <td align="center">w</td>
+            <td>�������ڶ�Ӧ������ 0 (������) - 6 (������) ��</td>
+          </tr>
+          <tr>
+            <td align="center">D</td>
+            <td>�������ڵ���д һ �� �� (Ӣ��״̬�� Sun to Sat) ��</td>
+          </tr>
+          <tr>
+            <td align="center">DD</td>
+            <td>�������ڵ�ȫ�� ����һ �� ������ (Ӣ��״̬�� Sunday to Saturday) ��</td>
+          </tr>
+          <tr>
+            <td align="center">W</td>
+            <td>�����ܶ�Ӧ������ (1 - 53) ��</td>
+          </tr>
+          <tr>
+            <td align="center">WW</td>
+            <td>ͬ�ϣ����С����λ����ǰ�油�� (01 - 53) ��</td>
+          </tr>
+        </table>
+        <br />
+        ʾ��<br />
+        <table width="100%" border="0" cellspacing="1" bgcolor="#000000">
+          <tr>
+            <th width="191">��ʽ�ַ���</th>
+            <th width="460">ֵ</th>
+          </tr>
+          <tr>
+            <td>yyyy-MM-dd HH:mm:ss</td>
+            <td>2008-03-12 19:20:00</td>
+          </tr>
+          <tr>
+            <td>yy��M��</td>
+            <td>08��3��</td>
+          </tr>
+          <tr>
+            <td>yyyyMMdd</td>
+            <td>20080312</td>
+          </tr>
+          <tr>
+            <td>������:yyyy��M��d HHʱmm�� </td>
+            <td>������:2008��3��12�� 19ʱ20��</td>
+          </tr>
+          <tr>
+            <td>H:m:s</td>
+            <td>19:20:0</td>
+          </tr>
+          <tr>
+            <td>y��</td>
+            <td>8��</td>
+          </tr>
+          <tr>
+            <td>MMMM d, yyyy</td>
+            <td>���� 12, 2008</td>
+          </tr>
+        </table>
+        <div>
+          <h4>ʾ�� 2-4-1: ������ʱ����</h4>
+          <p>
+            <input type="text" id="d241" onfocus="WdatePicker({dateFmt:'yyyy��MM��dd�� HHʱmm��ss��'})" class="Wdate" style="width:300px"/>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;d241&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">dateFmt:</span><span class="STYLE1">'yyyy��MM��dd�� HHʱmm��ss��'</span>})&quot; class=&quot;Wdate&quot; style=&quot;width:300px&quot;/&gt;<br />
+            <br />
+          <span class="STYLE1">ע��:</span>�����β���ѡ�����ڵ�ԭ��,��� <a href="3.asp.htm#autopickdate" tppabs="http://www.my97.net/dp/demo/resource/3.asp#autopickdate">autoPickDate</a> ����</p>
+        </div>
+        <div>
+          <h4>ʾ�� 2-4-2 ʱ����</h4>
+          <p>
+            <input type="text" id="d242" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'H:mm:ss'})" class="Wdate"/>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;d242&quot; onfocus=&quot;WdatePicker({skin:'whyGreen',<span class="STYLE2">dateFmt:</span><span class="STYLE1">'H:mm:ss'</span>})&quot; class=&quot;Wdate&quot;/&gt;<br />
+            <br />
+            <span class="STYLE1">ע��:</span>������ǰʹ����Ƥ��(skin)����,������ῴ��һ����ͬ��Ƥ��,Ƥ���������<a href="2.3.asp.htm#m232" tppabs="http://www.my97.net/dp/demo/resource/2.3.asp#m232">�Զ���Ͷ�̬�л�Ƥ��</a> </p>
+        </div>
+        <div>
+          <h4>ʾ�� 2-4-3 ����</h4>
+          <p>
+            <input type="text" id="d243" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy��MM��'})" class="Wdate"/>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;d243&quot; onfocus=&quot;WdatePicker({skin:'whyGreen',<span class="STYLE2">dateFmt:</span><span class="STYLE1">'yyyy��MM��'</span>})&quot; class=&quot;Wdate&quot;/&gt;</p>
+        </div>
+        <div>
+          <h4>ʾ�� 2-4-4 ȡ��ϵͳ��ʶ�������ֵ<span class="STYLE1">(��Ҫ)</span></h4>
+          <p>������ 1999��7��5�� �����������ǲ��ܹ���ϵͳʶ���,������ת��Ϊ�ܹ�ʶ��������� 1999-07-05 <br />
+            <br />
+            <input id="d244" type="text" class="Wdate" onfocus="WdatePicker({dateFmt:'yyyy��M��d��',vel:'d244_2'})"/>
+            ��ʵ������ֵ��:
+            <input id="d244_2" type="text" />
+            <br />
+            &lt;input id=&quot;d244&quot; type=&quot;text&quot; class=&quot;Wdate&quot; onfocus=&quot;WdatePicker(<span class="STYLE2">{dateFmt:</span><span class="STYLE1">'yyyy��M��d��'</span>,<span class="STYLE2">vel:</span><span class="STYLE1">'d244_2'</span>})&quot;/&gt;<br />
+            &lt;input id=&quot;<span class="STYLE1">d244_2</span>&quot; type=&quot;text&quot; /&gt;<br />
+            <br />
+            <span class="STYLE1">ע��:</span>��ʵ��Ӧ����,һ����velָ��Ϊһ��<span class="STYLE2">hidden�ؼ�</span>,������Ϊ�˰���ʵֵչʾ����,����ʹ���ı���<br />
+            <span class="STYLE1">�ؼ�����:</span> <span class="STYLE2">vel</span> ָ��һ���ؼ���ؼ���ID,�������value����(��input),���ڴ洢��ʵֵ(Ҳ����realDateFmt��realTimeFmt��ʽ�����ֵ)</p>
+        </div>
+        <div>
+          <h4>ʾ�� 2-4-5 ����, �� ��, ��<span class="STYLE1">(4.6����)</span></h4>
+          <p>
+            <input type="text" id="d245" style="width:200px" onfocus="WdatePicker({dateFmt:'DD, MMMM d, yyyy'})" class="Wdate"/>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;d245&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">dateFmt:</span><span class="STYLE1">'DD, MMMM d, yyyy'</span>})&quot; class=&quot;Wdate&quot;/&gt;</p>
+        </div>
+      </li>
+      <li> ˫����������<span class="STYLE1">(4.6����)</span> <a name="m225" id="m225"></a>
+        <p>����ͬʱ���������µ�����</p>
+        <div>
+          <h4>ʾ��2-5  ˫����������</h4>
+          <p>
+            <input class="Wdate" type="text" onfocus="WdatePicker({doubleCalendar:true,dateFmt:'yyyy-MM-dd'})"/>
+            <br />
+            &lt;input class=&quot;Wdate&quot; type=&quot;text&quot; onfocus=&quot;WdatePicker({<span class="STYLE2">doubleCalendar:</span><span class="STYLE1">true</span>,dateFmt:'yyyy-MM-dd'})&quot;/&gt;<br />
+            <br />
+          <span class="STYLE1">ע��:</span>˫������һ��ֻ���ڰ�������������Ԫ�صĳ���,�������ø�����ʱ,autoPickDate�Զ�����Ϊtrue</p>
+        </div>
+      </li>
+      <li>�Զ�������
+        <a name="m226" id="m226"></a>
+        <p>�����������Ϊ3��ģʽ:��ʾ(Ĭ��) �Զ����� ���,�����ڿ��е�ֵ�����ϸ�ʽʱ,ϵͳ�᳢���Զ��޸�,����޸�ʧ�ܻ���������õľ�����ģʽ���д���,�����жϹ��ܷǳ����������Ա�֤�û������ֵ��һ���Ϸ���ֵ</p>
+        <div>
+          <h4>ʾ��2-6-1 ���Ϸ���������ʾ</h4>
+          <p>������������ڿ���<span class="STYLE2">����һ�����Ϸ�������(��:1997-02-29)</span>,��<span class="STYLE2">�����뿪����</span><br />
+            ʹ��Ĭ���ݴ�ģʽ <span class="STYLE2">��ʾģʽ</span> errDealMode = 0 �������������ʱ,����<span class="STYLE2">��ʾ</span> <br />
+            <input type="text" class="Wdate" id="d261" onclick="WdatePicker()"/>
+            <br />
+            <br />
+            <span class="STYLE1">ע��:</span>1997�겻������Ŷ</p>
+        </div>
+        <div>
+          <h4>ʾ��2-6-2 �����������Ʒ�Χ������Ҳ����Ϊ��һ�����Ϸ�������</h4>
+          <p>���������2000-01-10 ,������¿������������ ���� 2000-01-10(��2000-01-12)Ҳ�ᱻ��Ϊ�ǲ��Ϸ������� <br />
+            <span class="STYLE2">�Զ�����ģʽ</span> errDealMode = 1 �������������ʱ,<span class="STYLE2">�Զ��ָ�ǰһ����ȷ��ֵ</span><br />
+            <input name="text" type="text" class="Wdate" onfocus="WdatePicker({errDealMode:1,maxDate:'2000-01-10'})"/>
+          </p>
+        </div>
+        <div>
+          <h4>ʾ��2-6-3 ʹ����Ч�����Ч���ڹ������Ƶ�����Ҳ����Ϊ��һ�����Ϸ�������</h4>
+          <p>��:<br />
+            2008-02-20 ��Ч��������<br />
+            2008-02-02 2008-02-09 2008-02-16 2008-02-23 ��Ч������<br />
+            ������Ч����<br />
+            �����Գ������¿���������Щ����,���뿪����<br />
+            <br />
+            <span class="STYLE2">���ģʽ</span> errDealMode = 2 �������������ʱ,<span class="STYLE2">������ʾ�͸���,ֻ����һ�����,����ʱ���ڿ򲻻���������</span><br />
+            <input name="text2" type="text" class="Wdate" onfocus="WdatePicker({errDealMode:2,maxDate:'2010-01-10',disabledDays:[6],disabledDates:['2008-02-20']})" value="2008-02-12"/>
+            <br />
+            <br />
+            <span class="STYLE1">ע��:</span>�����:WdateFmtErr����skinĿ¼��WdatePicker.css�ж����</p>
+        </div>
+      </li>
+      <li>�����޼������ʾ
+        <a name="m227" id="m227"></a>
+        <p>����������ڿؼ���������,�㶼����Ҫ���Ļᱻ����iframe���ڵ�����Ӱ��ͻ�����,��ΪMy97���ڿؼ��ǿ��Կ����޼������ʾ��</p>
+        <div>
+          <h4>ʾ��2-7 �����޼������ʾ</h4>
+          <p>�����޿�Խ���iframe,������ôǶ�׿�ܶ����ص�����,��ʹ�й�����Ҳ����<br />
+          <span class="STYLE1">ע��:Javascript���޷���Խframeset��,����My97���ڿؼ������޿�Խ���iframe,�κε�frameset������ʹ��iframe����</span></p>
+          <iframe src="demo_iframe.htm" tppabs="http://www.my97.net/dp/demo/resource/demo_iframe.htm" width="100%" height="220px" frameborder="0"></iframe>
+        </div>
+      </li>
+      <li>�����������������������
+        <a name="m228" id="m228"></a>
+        <p>����ݸ�ʽ����Ϊyyy��ʽʱ,������ݲ�������yearOffset(Ĭ��ֵ1911���Ԫ��),��ʵ�������������������������</p>
+        <div>
+          <h4>ʾ��2-8 �������ʾ</h4>
+          <p>
+            <input type="text" id="d28" onClick="WdatePicker({dateFmt:'yyy/MM/dd'})"/>
+            <br />
+            &lt;input type=&quot;text&quot; id=&quot;d28&quot; onClick=&quot;WdatePicker({<span class="STYLE2">dateFmt:</span><span class="STYLE1">'yyy/MM/dd'</span>})&quot;/&gt;<br />
+            <br />
+            <span class="STYLE1">ע��:</span>��ݸ�ʽ���ó�yyyʱ,���������ڽ����ȥһ������<span class="STYLE2">yearOffset(Ĭ��ֵΪ:1911)</span>,����������ʹ��Ĭ��ֵ����������������,����������Ĳ���,����ͨ����������ʽ����</p>
+        </div>
+      </li>
+      <li>�༭���� <a name="m229" id="m229"></a>
+        <p>�����ڿ�������ֵʱ,�޸���ĳ�����Ժ�,ֻҪ��������ť�Ϳ���ʵ��ʱ������ڵı༭</p>
+        <div>
+          <h4>ʾ��2-9 ���ں�ʱ��ı༭��ʾ</h4>
+          <p>�����Գ��Զ�������е��·ݸ�Ϊ1,Ȼ����<span class="STYLE2">����</span>,��ᷢ�������� 2000-<span class="STYLE1">02</span>-29 01:00:00 ��Ϊ 2000-<span class="STYLE1">01</span>-29 01:00:00<br />
+            <input class="Wdate" type="text" style="width:200px"  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" value="2000-02-29 01:00:00"/>
+          </p>
+        </div>
+      </li>
+      <li>Ϊ��̴�������
+        <a name="m22a" id="m22a"></a>
+        <p>���el��ֵ��this,��ʡ��,�����е�el:this�����Բ�д <br />
+          ���ڿ�����Ϊdisabledʱ,��ֹ��������(������ѡ���) <br />
+          ���û�ж���onpicked�¼�,�Զ������ı����onchange�¼� <br />
+          ���û�ж���oncleared�¼�,���ʱ,�Զ�����onchange�¼�</p>
+      </li>
+      <li>��������
+        <a name="m22b" id="m22b"></a>
+        <p>����readOnly����,��ָ�����ڿ��Ƿ�ֻ�� <br />
+          ����highLineWeekDay����,��ָ���Ƿ������ĩ <br />
+          ����isShowOthers����,��ָ���Ƿ���ʾ�����µ����� <br />
+          ����class="Wdate"�ͻ���ѡ����ұ߳�������ͼ��</p>
+      </li>
+    </ol>
+    <h3><a href="2.3.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.3.asp">3. �����Ժ��Զ���Ƥ��</a><a name="m23" id="m23"></a></h3>
+    <h3><a href="2.4.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.4.asp">4. ���ڷ�Χ����</a><a name="m24" id="m24"></a></h3>
+    <h3><a href="2.5.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.5.asp">5. �Զ����¼�</a><a name="m25" id="m25"></a></h3>
+    <h3><a href="2.6.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/2.6.asp">6. ����ѡ����</a> <a name="m26" id="m26"></a></h3>
+    <h2><a href="3.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/3.asp">��. ����˵��</a><a name="m3" id="m3"></a></h2>
+    <h2><a href="999.asp.htm" tppabs="http://www.my97.net/dp/demo/resource/999.asp">��. ���ʹ��</a><a name="m4" id="m4"></a></h2>
+    <br />
+    <br />
+  </div>
+  <div style="clear:both"></div>
+</div>
+<div class="dCenter dBody" style="padding-left:72px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6343250634002651";
+/* �ײ� */
+google_ad_slot = "0599809152";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript">
+</script>
+</div>
+<div id="footer" class="dCenter">&copy; 2010 <a href="mailto:smallcarrot@163.com">My97</a> All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F489957c212e14340592fb2e4921b2f1d' type='text/javascript'%3E%3C/script%3E"));
+</script>&nbsp;&nbsp;&nbsp;&nbsp;��ICP��11060275��
+</div>
+</body>
+</html>

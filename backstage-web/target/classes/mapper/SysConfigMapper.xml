@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ueater.backstage.dao.ISysConfigDao" >
+  <resultMap id="BaseResultMap" type="com.ueater.backstage.common.model.SysConfig" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="smtp" property="smtp" jdbcType="VARCHAR" />
+    <result column="port" property="port" jdbcType="VARCHAR" />
+    <result column="mailname" property="mailname" jdbcType="VARCHAR" />
+    <result column="mailpassword" property="mailpassword" jdbcType="VARCHAR" />
+    <result column="smsname" property="smsname" jdbcType="VARCHAR" />
+    <result column="smspassword" property="smspassword" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, smtp, port, mailname, mailpassword, smsname, smspassword
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.ueater.backstage.common.model.SysConfigExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_config
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sys_config
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ueater.backstage.common.model.SysConfigExample" >
+    delete from sys_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ueater.backstage.common.model.SysConfig" >
+    insert into sys_config (id, smtp, port, 
+      mailname, mailpassword, smsname, 
+      smspassword)
+    values (#{id,jdbcType=BIGINT}, #{smtp,jdbcType=VARCHAR}, #{port,jdbcType=VARCHAR}, 
+      #{mailname,jdbcType=VARCHAR}, #{mailpassword,jdbcType=VARCHAR}, #{smsname,jdbcType=VARCHAR}, 
+      #{smspassword,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ueater.backstage.common.model.SysConfig" >
+    insert into sys_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="smtp != null" >
+        smtp,
+      </if>
+      <if test="port != null" >
+        port,
+      </if>
+      <if test="mailname != null" >
+        mailname,
+      </if>
+      <if test="mailpassword != null" >
+        mailpassword,
+      </if>
+      <if test="smsname != null" >
+        smsname,
+      </if>
+      <if test="smspassword != null" >
+        smspassword,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="smtp != null" >
+        #{smtp,jdbcType=VARCHAR},
+      </if>
+      <if test="port != null" >
+        #{port,jdbcType=VARCHAR},
+      </if>
+      <if test="mailname != null" >
+        #{mailname,jdbcType=VARCHAR},
+      </if>
+      <if test="mailpassword != null" >
+        #{mailpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="smsname != null" >
+        #{smsname,jdbcType=VARCHAR},
+      </if>
+      <if test="smspassword != null" >
+        #{smspassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ueater.backstage.common.model.SysConfigExample" resultType="java.lang.Integer" >
+    select count(*) from sys_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sys_config
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.smtp != null" >
+        smtp = #{record.smtp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.port != null" >
+        port = #{record.port,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mailname != null" >
+        mailname = #{record.mailname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mailpassword != null" >
+        mailpassword = #{record.mailpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.smsname != null" >
+        smsname = #{record.smsname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.smspassword != null" >
+        smspassword = #{record.smspassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sys_config
+    set id = #{record.id,jdbcType=BIGINT},
+      smtp = #{record.smtp,jdbcType=VARCHAR},
+      port = #{record.port,jdbcType=VARCHAR},
+      mailname = #{record.mailname,jdbcType=VARCHAR},
+      mailpassword = #{record.mailpassword,jdbcType=VARCHAR},
+      smsname = #{record.smsname,jdbcType=VARCHAR},
+      smspassword = #{record.smspassword,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ueater.backstage.common.model.SysConfig" >
+    update sys_config
+    <set >
+      <if test="smtp != null" >
+        smtp = #{smtp,jdbcType=VARCHAR},
+      </if>
+      <if test="port != null" >
+        port = #{port,jdbcType=VARCHAR},
+      </if>
+      <if test="mailname != null" >
+        mailname = #{mailname,jdbcType=VARCHAR},
+      </if>
+      <if test="mailpassword != null" >
+        mailpassword = #{mailpassword,jdbcType=VARCHAR},
+      </if>
+      <if test="smsname != null" >
+        smsname = #{smsname,jdbcType=VARCHAR},
+      </if>
+      <if test="smspassword != null" >
+        smspassword = #{smspassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ueater.backstage.common.model.SysConfig" >
+    update sys_config
+    set smtp = #{smtp,jdbcType=VARCHAR},
+      port = #{port,jdbcType=VARCHAR},
+      mailname = #{mailname,jdbcType=VARCHAR},
+      mailpassword = #{mailpassword,jdbcType=VARCHAR},
+      smsname = #{smsname,jdbcType=VARCHAR},
+      smspassword = #{smspassword,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

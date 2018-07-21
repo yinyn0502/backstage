@@ -1,0 +1,13 @@
+com/ueater/backstage/dao/ISysMenuDao.class
+com/ueater/backstage/dao/ISessionDao.class
+com/ueater/backstage/dao/ISysUserFriendDao.class
+com/ueater/backstage/dao/ISysRoleOfficeDao.class
+com/ueater/backstage/dao/ISysAreaDao.class
+com/ueater/backstage/dao/ISysRoleDao.class
+com/ueater/backstage/dao/ISysLogDao.class
+com/ueater/backstage/dao/ISysOfficeDao.class
+com/ueater/backstage/dao/ISysUserRoleDao.class
+com/ueater/backstage/dao/ISysUserDao.class
+com/ueater/backstage/dao/ISysDictDao.class
+com/ueater/backstage/dao/ISysRoleMenuDao.class
+com/ueater/backstage/dao/ISysConfigDao.class

@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ueater</groupId>
+    <artifactId>product</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>product-outerservice</artifactId>
+  
+  <dependencies>
+        <dependency>
+            <groupId>com.ueater</groupId>
+            <artifactId>product-dataservice</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+      <dependency>
+          <groupId>com.netflix.feign</groupId>
+          <artifactId>feign-jackson</artifactId>
+      </dependency>
+  </dependencies>
+  
+</project>
