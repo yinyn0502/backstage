@@ -4,32 +4,17 @@
 <head>
     <meta name="description" content="User login page" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="/static/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script src="/static/jquery/jquery-migrate-1.1.1.min.js" type="text/javascript"></script>
-    <script src="/static/jquery-validation/1.14.0/jquery.validate.js" type="text/javascript"></script>
-    <script src="/static/jquery-validation/1.14.0/localization/messages_zh.min.js" type="text/javascript"></script>
-    <link href="/static/bootstrap/3.3.4/css_default/bootstrap.min.css" type="text/css" rel="stylesheet" />
-    <script src="/static/bootstrap/3.3.4/js/bootstrap.min.js"  type="text/javascript"></script>
-    <link href="/static/awesome/4.4/css/font-awesome.min.css" rel="stylesheet" />
-    <!-- jeeplus -->
-    <link href="/static/common/jeeplus.css" type="text/css" rel="stylesheet" />
-    <script src="/static/common/jeeplus.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
-    <!-- text fonts -->
     <link rel="stylesheet" href="/static/common/login/ace-fonts.css" />
 
-    <!-- ace styles -->
     <link rel="stylesheet" href="/static/common/login/ace.css" />
 
-    <!-- 引入layer插件 -->
-    <script src="/static/layer-v2.3/layer/layer.js"></script>
-    <script src="/static/layer-v2.3/layer/laydate/laydate.js"></script>
-
-
-    <!--[if lte IE 9]>
     <link rel="stylesheet" href="../assets/css/ace-part2.css" />
-    <![endif]-->
     <link rel="stylesheet" href="/static/common/login/ace-rtl.css" />
+    <#include "./ahead.ftl">
+    <#include "./treeview.ftl" >
+    <#include "./treetable.ftl" >
+    <script type="text/javascript" src="/login/login.js"></script>
     <style type="text/css">
 
         .bound{
@@ -38,184 +23,13 @@
             border-radius: 40px;
         }
     </style>
-    <title>优集客登录</title>
+    <title>宠物网集成系统</title>
     <script>
         if (window.top !== window.self) {
             window.top.location = window.location;
         }
     </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#loginForm").validate({
-                rules: {
-                    validateCode: {remote: "/servlet/validateCodeServlet"}
-                },
-                messages: {
-                    username: {required: "请填写用户名."},password: {required: "请填写密码."},
-                    validateCode: {remote: "验证码不正确.", required: "请填写验证码."}
-                },
-                errorLabelContainer: "#messageBox",
-                errorPlacement: function(error, element) {
-                    error.appendTo($("#loginError").parent());
-                }
-            });
-        });
-        // 如果在框架或在对话框中，则弹出提示并跳转到首页
-        if(self.frameElement && self.frameElement.tagName == "IFRAME" || $('#left').length > 0 || $('.jbox').length > 0){
-            alert('未登录或登录超时。请重新登录，谢谢！');
-            top.location = "";
-        }
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#inputForm").validate({
-                rules: {
-                    loginName: {remote: "/sys/user/validateLoginName"},
-                    mobile: {remote: "/sys/user/validateMobile"},
-                    randomCode: {
-
-                        remote:{
-
-                            url:"/sys/register/validateMobileCode",
-
-                            data:{
-                                mobile:function(){
-                                    return $("#tel").val();
-                                }
-                            }
-
-                        }
-
-
-                    }
-                },
-                messages: {
-                    confirmNewPassword: {equalTo: "输入与上面相同的密码"},
-                    ck1: {required: "必须接受用户协议."},
-                    loginName: {remote: "此用户名已经被注册!", required: "用户名不能为空."},
-                    mobile:{remote: "此手机号已经被注册!", required: "手机号不能为空."},
-                    randomCode:{remote: "验证码不正确!", required: "验证码不能为空."}
-                },
-                submitHandler: function(form){
-                    loading('正在提交，请稍等...');
-                    form.submit();
-                },
-                errorContainer: "#messageBox",
-                errorPlacement: function(error, element) {
-                    $("#messageBox").text("输入有误，请先更正。");
-                    if (element.is(":checkbox")||element.is(":radio")||element.parent().is(".input-append")){
-                        error.appendTo(element.parent().parent());
-                    } else {
-                        error.insertAfter(element);
-                    }
-                }
-            });
-
-            $("#resetForm").validate({
-                rules: {
-                    mobile: {remote: "/sys/user/validateMobileExist"}
-                },
-                messages: {
-                    mobile:{remote: "此手机号未注册!", required: "手机号不能为空."}
-                },
-                submitHandler: function(form){
-                    loading('正在提交，请稍等...');
-                    form.submit();
-                },
-                errorContainer: "#messageBox",
-                errorPlacement: function(error, element) {
-                    $("#messageBox").text("输入有误，请先更正。");
-                    if (element.is(":checkbox")||element.is(":radio")||element.parent().is(".input-append")){
-                        error.appendTo(element.parent().parent());
-                    } else {
-                        error.insertAfter(element);
-                    }
-                }
-            });
-            // 手机号码验证
-            jQuery.validator.addMethod("isMobile", function(value, element) {
-                var length = value.length;
-                var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
-                return (length == 11 && mobile.test(value));
-            }, "请正确填写您的手机号码");
-
-
-
-            $('#sendPassBtn').click(function () {
-                if($("#tel_resetpass").val()=="" || $("#tel_resetpass-error").text()!=""){
-                    top.layer.alert("请输入有效的注册手机号码！", {icon: 0});//讨厌的白色字体问题
-                    return;
-
-                }
-                $("#sendPassBtn").attr("disabled", true);
-                $.get("/sys/user/resetPassword?mobile="+$("#tel_resetpass").val(),function(data){
-                    if(data.success == false){
-                        top.layer.alert(data.msg, {icon: 0});//讨厌的白色字体问题
-                        //alert(data.msg);
-                        $("#sendPassBtn").html("重新发送").removeAttr("disabled");
-                        clearInterval(countdown);
-
-                    }
-
-                });
-                var count = 60;
-                var countdown = setInterval(CountDown, 1000);
-                function CountDown() {
-                    $("#sendPassBtn").attr("disabled", true);
-                    $("#sendPassBtn").html("等待 " + count + "秒!");
-                    if (count == 0) {
-                        $("#sendPassBtn").html("重新发送").removeAttr("disabled");
-                        clearInterval(countdown);
-                    }
-                    count--;
-                }
-
-
-            }) ;
-
-
-            $('#sendCodeBtn').click(function () {
-                if($("#tel").val()=="" || $("#tel-error").text()!=""){
-                    top.layer.alert("请输入有效的注册手机号码！", {icon: 0});//讨厌的白色字体问题
-                    return;
-
-                }
-                $("#sendCodeBtn").attr("disabled", true);
-                $.get("/sys/register/getRegisterCode?mobile="+$("#tel").val(),function(data){
-                    if(data.success == false){
-                        //top.layer.alert(data.msg, {icon: 0});讨厌的白色字体问题
-                        alert(data.msg);
-                        $("#sendCodeBtn").html("重新发送").removeAttr("disabled");
-                        clearInterval(countdown);
-
-                    }
-
-                });
-                var count = 60;
-                var countdown = setInterval(CountDown, 1000);
-                function CountDown() {
-                    $("#sendCodeBtn").attr("disabled", true);
-                    $("#sendCodeBtn").html("等待 " + count + "秒!");
-                    if (count == 0) {
-                        $("#sendCodeBtn").html("重新发送").removeAttr("disabled");
-                        clearInterval(countdown);
-                    }
-                    count--;
-                }
-
-
-            }) ;
-
-        });
-
-
-
-
-
-
-    </script>
 </head>
-
 
 <body class="login-layout light-login">
 <div class="main-container">
@@ -227,13 +41,12 @@
                     <div class="center">
                         <h1>
                             <br/>
-                           <#-- <img src="/static/common/login/images/logo.png" style="width:280px">-->
                             <br>
                         </h1>
 
-<#if message??>
-                        ${message}
-</#if>
+            <#if message??>
+                 ${message}
+            </#if>
                     </div>
 
                     <div class="space-6"></div>
@@ -287,27 +100,7 @@
 
                                         </fieldset>
                                     </form>
-                                    <!--
-                                    <div class="social-or-login center">
-                                        <span class="bigger-110">Or Login Using</span>
-                                    </div>
 
-                                    <div class="space-6"></div>
-
-                                    <div class="social-login center">
-                                        <a class="btn btn-primary">
-                                            <i class="ace-icon fa fa-facebook"></i>
-                                        </a>
-
-                                        <a class="btn btn-info">
-                                            <i class="ace-icon fa fa-twitter"></i>
-                                        </a>
-
-                                        <a class="btn btn-danger">
-                                            <i class="ace-icon fa fa-google-plus"></i>
-                                        </a>
-                                    </div>
-                                    -->
                                     <br/>
                                     <br/>
                                     <div class="form-options clearfix">
@@ -464,7 +257,7 @@
                             </div><!-- /.widget-body -->
                         </div><!-- /.signup-box -->
                     </div><!-- /.position-relative -->
-                    <div class="center"><h4 id="id-company-text"><font color="#A90E0E">&copy; www.ueater.com</font></h4></div>
+                    <div class="center"><h4 id="id-company-text"><font color="#A90E0E">&copy; www.chongwuweb.com</font></h4></div>
 
                 </div>
             </div><!-- /.col -->
@@ -499,23 +292,7 @@
         margin-left: 5px;
     }
 
-    .form-control.error {
-        border: 1px dotted #cc5965;
-    }
 </style>
-<!-- inline scripts related to this page -->
-<script type="text/javascript">
-    $(document).ready(function() {
-        $(document).on('click', '.form-options a[data-target]', function(e) {
-            e.preventDefault();
-            var target = $(this).data('target');
-            $('.widget-box.visible').removeClass('visible');//hide others
-            $(target).addClass('visible');//show target
-        });
-    });
 
-
-
-</script>
 </body>
 </html>

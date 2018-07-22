@@ -4,6 +4,11 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**    
+ * @Description:    
+ * @Author:       花荣   
+ * @CreateDate:   2018/7/22 16:03     
+ */
 @Data
 public class SysArea {
     private Long id;
@@ -33,5 +38,4 @@ public class SysArea {
     private String delFlag;
 
     private SysArea parent;
-
-   }
+}

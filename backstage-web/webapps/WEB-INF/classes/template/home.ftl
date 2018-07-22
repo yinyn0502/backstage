@@ -147,7 +147,7 @@
 
                     </div>
                     <div class="ibox-content">
-                        <p><i class="fa fa-send-o"></i> 网址：<a href="http://www.ueater.com" target="_blank">http://www.ueater.com</a>
+                        <p><i class="fa fa-send-o"></i> 网址：<a href="http://www.ueater.com" target="_blank">http://www.chongwuweb.com</a>
                         </p>
 
                     </div>

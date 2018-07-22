@@ -1,7 +1,5 @@
 package com.ueater.backstage.web.main;
 
-import com.google.common.collect.Maps;
-import com.ueater.backstage.web.auth.ShiroTagFreeMarkerConfigurer;
 import org.apache.logging.log4j.core.lookup.MainMapLookup;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -14,17 +12,14 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
-import java.util.Map;
-import java.util.Properties;
 
 import javax.servlet.MultipartConfigElement;
 
-/**
- * Created by fanlei on 2017/3/24.
- */
+/**    
+ * @Description:    
+ * @Author:       花荣   
+ * @CreateDate:   2018/7/22 16:42     
+ */
 @Configuration
 @EnableAutoConfiguration
 @EnableFeignClients(basePackages = "com.ueater.backstage")
@@ -36,7 +31,7 @@ public class Application extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(
             SpringApplicationBuilder application) {
-        MainMapLookup.setMainArguments("ueater-backstage");
+        MainMapLookup.setMainArguments("backstage");
         return application.sources(Application.class);
     }
 

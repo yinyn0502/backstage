@@ -17,16 +17,21 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by sun on 2017-4-2.
- */
+/**    
+ * @Description:    
+ * @Author:       花荣   
+ * @CreateDate:   2018/7/22 16:39     
+ */
 public class MyShiroFilterFactoryBean extends ShiroFilterFactoryBean {
-    // ShiroFilter将直接忽略的请求
+
+    /**
+     * ShiroFilter将直接忽略的请求
+     */
     private Set<String> ignoreExt;
 
     public MyShiroFilterFactoryBean(){
         super();
-        ignoreExt = new HashSet<String>();
+        ignoreExt = new HashSet<>();
         ignoreExt.add(".jpg");
         ignoreExt.add(".png");
         ignoreExt.add(".gif");
