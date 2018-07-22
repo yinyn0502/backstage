@@ -1,34 +1,28 @@
 package com.ueater.backstage.web;
 
-import javax.annotation.Resource;
-
 import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
 import com.ueater.backstage.common.dto.member.BasePagination;
+import com.ueater.backstage.common.dto.member.message.BatchMessageTO;
 import com.ueater.backstage.common.dto.message.MessageBatchBackStageQueryDTO;
 import com.ueater.backstage.common.dto.message.MessageBatchDTO;
 import com.ueater.backstage.common.dto.message.MessageBatchInfo;
 import com.ueater.backstage.common.dto.message.MessageBatchStatisticsDTO;
-import com.ueater.backstage.common.model.backstageorder.StoreNameDTO;
 import com.ueater.backstage.common.util.Constant;
 import com.ueater.backstage.common.util.Tools;
-
+import com.ueater.backstage.service.IMessageService;
+import com.ueater.tool.annotation.ControllerLog;
 import com.ueater.tool.response.Response;
 import com.ueater.tool.response.ResponseCode;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.ueater.tool.util.ObjectJudgmentUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.ueater.backstage.common.dto.member.message.BatchMessageTO;
-import com.ueater.backstage.service.IMessageService;
-import com.ueater.tool.annotation.ControllerLog;
-import com.ueater.tool.util.ObjectJudgmentUtil;
-
-import lombok.extern.slf4j.Slf4j;
-
+import javax.annotation.Resource;
 import java.util.List;
 
 @Slf4j
