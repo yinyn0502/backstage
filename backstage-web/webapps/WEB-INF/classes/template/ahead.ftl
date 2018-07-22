@@ -2,6 +2,7 @@
 <script src="/static/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script src="/static/jquery/jquery-migrate-1.1.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="/static/TableDnD/jquery.tablednd.js"></script>
+<script src="/static/jquery-validation/1.14.0/jquery.validate.js" type="text/javascript"></script>
 
 
 <!-- 引入依赖的第三方插件 -->

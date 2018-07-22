@@ -19,7 +19,7 @@ public class Const {
 	public static final String TRUE = "T";
 	public static final String FALSE = "F";
 	public static final String LOGIN = "/login_toLogin.do"; // 登录地址
-	public static final String SYSNAME = "ueater-backstage"; // 系统名称路径
+	public static final String SYSNAME = "backstage"; // 系统名称路径
 	public static final String PAGE = "admin/config/PAGE.txt"; // 分页条数配置路径
 	public static final String EMAIL = "admin/config/EMAIL.txt"; // 邮箱服务器配置路径
 	public static final String SMS1 = "admin/config/SMS1.txt"; // 短信账户配置路径1
@@ -35,10 +35,10 @@ public class Const {
 
 	public static ApplicationContext WEB_APP_CONTEXT = null; // 该值会在web容器启动时由WebAppContextListener初始化
 
-	/**
-	 * APP Constants
-	 */
-	// app注册接口_请求协议参数)
+    /**
+     * app注册接口_请求协议参数)
+     */
+
 	public static final String[] APP_REGISTERED_PARAM_ARRAY = new String[] { "countries", "uname", "passwd", "title", "full_name", "company_name", "countries_code", "area_code", "telephone", "mobile" };
 	public static final String[] APP_REGISTERED_VALUE_ARRAY = new String[] { "国籍", "邮箱帐号", "密码", "称谓", "名称", "公司名称", "国家编号", "区号", "电话", "手机号" };
 

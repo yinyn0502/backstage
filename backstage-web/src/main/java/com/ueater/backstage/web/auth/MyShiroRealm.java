@@ -16,46 +16,31 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
-/**
- * shiro的认证最终是交给了Realm进行执行
- * 所以我们需要自己重新实现一个Realm，此Realm继承AuthorizingRealm
- * Created by sun on 2017-4-2.
- */
+/**    
+ * @Description: shiro的认证最终是交给了Realm进行执行
+ * 所以我们需要自己重新实现一个Realm，此Realm继承AuthorizingRealm   
+ * @Author:       花荣   
+ * @CreateDate:   2018/7/22 16:23     
+ */
 
 public class MyShiroRealm extends AuthorizingRealm {
 
     protected org.slf4j.Logger logger = LoggerFactory.getLogger(MyShiroRealm.class);
-    @Resource
+    @Autowired
     private ISysUserDataService sysUserDataService;
-    @Resource
+
+    @Autowired
     private ISysRoleDataService sysRoleDataService;
+
     @Resource
     private ISysMenuDataService sysMenuDataService;
-    /**
-     * 登录认证
-     */
-/*    @Override
-    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
-        //UsernamePasswordToken用于存放提交的登录信息
-        UsernamePasswordToken token = (UsernamePasswordToken)authenticationToken;
-        logger.info("登录认证!");
-        logger.info("验证当前Subject时获取到token为：" + ReflectionToStringBuilder.toString(token, ToStringStyle.MULTI_LINE_STYLE));
-        SysUser user = sysUserDataService.getByLoginName(token.getUsername());
-        if (user != null){
-            logger.info("用户: " + user.getName());
-            *//*if(user.getStatus() == 0){
-                throw new DisabledAccountException();
-            }*//*
-            // 若存在，将此用户存放到登录认证info中，无需自己做密码对比，Shiro会为我们进行密码对比校验
-            return new SimpleAuthenticationInfo(user.getLoginName(), user.getPassword(), getName());
-        }
-        return null;
-    }*/
+
 
     /**
      * 登录认证
@@ -65,10 +50,8 @@ public class MyShiroRealm extends AuthorizingRealm {
         //UsernamePasswordToken用于存放提交的登录信息
         UsernamePasswordToken token = (UsernamePasswordToken)authenticationToken;
         logger.info("登录认证!");
-//        logger.info("验证当前Subject时获取到token为：" + org.apache.commons.lang3.builder.ReflectionToStringBuilder.toString(token, org.apache.commons.lang3.builder.ToStringStyle.MULTI_LINE_STYLE));
         logger.info("AD用户认证！");
         logger.info("username:"+token.getUsername());
-//        logger.info("password:"+String.valueOf(token.getPassword()));
         int flag= com.ueater.backstage.common.util.AdLoginUtil.validAdUsers(token.getUsername(),String.valueOf(token.getPassword()));
         SecurityUtils.getSubject().getSession().setTimeout(86400000);
         if(flag==200){
@@ -86,7 +69,9 @@ public class MyShiroRealm extends AuthorizingRealm {
                 sysUser.setAdFlag(Constant.IS_AD_USER);
                 sysUser.setLoginDate(new Date());
                 sysUser.setCompanyId(new Long(1));
-                sysUser.setOfficeId(new Long(5));//默認技術部
+
+                //默認技術部
+                sysUser.setOfficeId(new Long(5));
                 sysUser.setPassword(String.valueOf(token.getPassword()));
                 sysUser.setName(token.getUsername());
                 sysUser.setLoginFlag(Constant.LOGIN_FLAG_YES);

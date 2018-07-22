@@ -3,7 +3,6 @@ package com.ueater.backstage.web;
 import com.github.pagehelper.PageInfo;
 import com.google.common.collect.Lists;
 import com.ueater.backstage.common.dto.member.*;
-import com.ueater.backstage.common.model.backstageorder.StoreNameDTO;
 import com.ueater.backstage.common.model.couponmanage.StoreNameRequest;
 import com.ueater.backstage.common.util.Tools;
 import com.ueater.backstage.service.IMemberService;
@@ -22,7 +21,6 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Created by caoli on 2017/8/21.

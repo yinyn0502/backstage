@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
-    <title>优集客</title>
+    <title>宠物网集成系统</title>
 
 <#include "ahead.ftl">
     <script src="/static/common/inspinia.js?v=3.2.0"></script>
@@ -26,60 +26,43 @@
         <div class="sidebar-collapse">
             <ul class="nav" id="side-menu">
                 <li class="nav-header">
-                    <div class="dropdown profile-element">
-                        <span><label style="color: red">当前用户:${currentUser.loginName}
-                        </label>
-                        </span>
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                                <span class="clear">
-                               <span class="block m-t-xs"><strong class="font-bold"></strong></span>
-                               <span class="text-muted text-xs block"><b class="caret"></b></span>
-                                </span>
-                        </a>
-                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <#--<li><a class="J_menuItem" href="/sys/user/imageEdit">修改头像</a>
-                            </li>
-                            <li><a class="J_menuItem" href="/sys/user/info">个人资料</a>
-                            </li>
-                            <li><a class="J_menuItem" href="/iim/contact/index">我的通讯录</a>
-                            </li>
-                            <li><a class="J_menuItem" href="/iim/mailBox/list">信箱</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a onclick="changeStyle()" href="#">切换到ACE模式</a>
-                            </li>
 
-                            <li class="divider"></li>-->
-                            <li><a href="/logout">安全退出</a>
-                            </li>
-                        </ul>
+
+                    <div class="dropdown profile-element">
+                        <img alt="image" class="rounded-circle" style="width: 133px;margin-left: -18px;border-radius: 50%!important" src="img/profile_small.png">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="block m-t-xs font-bold">当前登录人：${currentUser.loginName}</span>
+                        </a>
+                        <label style="margin-bottom: 0px;margin-top: 15px;">
+                            <a href="/logout" style="color: red;font-size: 14px;">安全退出</a>
+                        </label>
                     </div>
+
                     <div class="logo-element">JP
                     </div>
                 </li>
 
 
+            <#if menuList??>
+                <#list menuList as m>
 
-<#if menuList??>
-    <#list menuList as m>
 
+                            <li><a href=""><i class="fa fa-cog"></i> <span
+                                    class="nav-label">${m.name}</span><span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                    <#if m.subSysMenu??>
+                        <#list m.subSysMenu as sub>
+                            <#if sub.id??>
+                                    <li><a class="J_menuItem" href="${sub.href}">
+                                        <i class="fa list-alt"></i> <span class="nav-label">${sub.name}</span></a></li>
+                              </#if>
+                        </#list>
+                    </#if>
+                                </ul></li>
 
-                <li><a href=""><i class="fa fa-cog"></i> <span
-                        class="nav-label">${m.name}</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-        <#if m.subSysMenu??>
-            <#list m.subSysMenu as sub>
-                <#if sub.id??>
-                        <li><a class="J_menuItem" href="${sub.href}">
-                            <i class="fa list-alt"></i> <span class="nav-label">${sub.name}</span></a></li>
-                  </#if>
             </#list>
-        </#if>
-                    </ul></li>
-
-</#list>
-<#else>
-</#if>
+            <#else>
+            </#if>
 
 
             </ul>
@@ -109,113 +92,9 @@
     <div id="page-wrapper" class="gray-bg dashbard-1">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <#--<div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                    <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
-                        <div class="form-group">
-                            <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
-                        </div>
-                    </form>
-                </div>-->
                 <ul class="nav navbar-top-links navbar-right">
-                   <#-- <li class="dropdown">
-                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                            <i class="fa fa-envelope"></i> <span class="label label-warning">noReadCount</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-messages">
-
-                            <li>
-                                <div class="text-center link-block">
-                                    <a class="J_menuItem" href="/iim/mailBox/list?orderBy=sendtime desc">
-                                        <i class="fa fa-envelope"></i> <strong> 查看所有邮件</strong>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>-->
                     <li class="dropdown">
-                       <#-- <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell"></i> <span class="label label-primary">count</span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-
-
-
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <div class="text-center link-block">
-                                    您有 count 条未读消息 <a class="J_menuItem" href="/oa/oaNotify/self">
-                                    <strong>查看所有 </strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                                </div>
-                            </li>
-                        </ul>-->
                     </li>
-
-                    <!-- 国际化功能预留接口 -->
-                    <#--<li class="dropdown">
-                        <a id="lang-switch" class="lang-selector dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="true">
-								<span class="lang-selected">
-										<img  class="lang-flag" src="/static/common/img/china.png" alt="中国">
-										<span class="lang-id">中国</span>
-										<span class="lang-name">中文</span>
-									</span>
-                        </a>
-
-                        <!--Language selector menu&ndash;&gt;
-                        <ul class="head-list dropdown-menu with-arrow">
-                            <li>
-                                <!--English&ndash;&gt;
-                                <a class="lang-select">
-                                    <img class="lang-flag" src="/static/common/img/china.png" alt="中国">
-                                    <span class="lang-id">中国</span>
-                                    <span class="lang-name">中文</span>
-                                </a>
-                            </li>
-                            <li>
-                                <!--English&ndash;&gt;
-                                <a class="lang-select">
-                                    <img class="lang-flag" src="/static/common/img/united-kingdom.png" alt="English">
-                                    <span class="lang-id">EN</span>
-                                    <span class="lang-name">English</span>
-                                </a>
-                            </li>
-                            <li>
-                                <!--France&ndash;&gt;
-                                <a class="lang-select">
-                                    <img class="lang-flag" src="/static/common/img/france.png" alt="France">
-                                    <span class="lang-id">FR</span>
-                                    <span class="lang-name">Français</span>
-                                </a>
-                            </li>
-                            <li>
-                                <!--Germany&ndash;&gt;
-                                <a class="lang-select">
-                                    <img class="lang-flag" src="/static/common/img/germany.png" alt="Germany">
-                                    <span class="lang-id">DE</span>
-                                    <span class="lang-name">Deutsch</span>
-                                </a>
-                            </li>
-                            <li>
-                                <!--Italy&ndash;&gt;
-                                <a class="lang-select">
-                                    <img class="lang-flag" src="/static/common/img/italy.png" alt="Italy">
-                                    <span class="lang-id">IT</span>
-                                    <span class="lang-name">Italiano</span>
-                                </a>
-                            </li>
-                            <li>
-                                <!--Spain&ndash;&gt;
-                                <a class="lang-select">
-                                    <img class="lang-flag" src="/static/common/img/spain.png" alt="Spain">
-                                    <span class="lang-id">ES</span>
-                                    <span class="lang-name">Español</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>-->
                 </ul>
             </nav>
         </div>
@@ -229,27 +108,12 @@
             </nav>
             <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
             </button>
-           <#-- <div class="btn-group roll-nav roll-right">
-                <button class="dropdown J_tabClose"  data-toggle="dropdown">关闭操作<span class="caret"></span>
-
-                </button>
-                <ul role="menu" class="dropdown-menu dropdown-menu-right">
-                    <li class="J_tabShowActive"><a>定位当前选项卡</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
-                    </li>
-                    <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
-                    </li>
-                </ul>
-            </div>
-            <a href="/logout" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>-->
         </div>
         <div class="row J_mainContent" id="content-main">
             <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/home" frameborder="0" data-id="/home" seamless></iframe>
         </div>
         <div class="footer">
-            <div class="pull-left"><a href="http://www.ueater.com">http://www.ueater.com</a> &copy; 2017-2027</div>
+            <div class="pull-left"><a href="http://www.ueater.com">http://www.chongwuweb.com</a> &copy; 2018-2028</div>
         </div>
     </div>
     <!--右侧部分结束-->
@@ -280,33 +144,8 @@
 
 </script>
 
-
-
-<!-- 即时聊天插件  开始
-<link href="/static/layer-v2.3/layim/layui/css/layui.css" type="text/css" rel="stylesheet"/>
-<script type="text/javascript">
-    var currentId = '';
-    var currentName = '';
-    var currentFace ='';
-    var url="";
-    var static_url="/static";
-    var wsServer = 'ws://'+window.document.domain+':8668';
-
-</script>
--->
 <!--webscoket接口  -->
 <script src="/static/layer-v2.3/layim/layui/layui.js"></script>
 
 <script src="/static/layer-v2.3/layim/layim.js"></script>
-<!-- 即时聊天插件 结束 -->
-<style>
-    /*签名样式*/
-    .layim-sign-box{
-        width:95%
-    }
-    .layim-sign-hide{
-        border:none;background-color:#F5F5F5;
-    }
-</style>
-
 </html>
